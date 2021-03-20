@@ -1,6 +1,7 @@
 package com.spudg.kalk
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -30,11 +31,13 @@ class CalculatorAdapter(private val context: Context, private val items: ArrayLi
             binding.calcName.text = calc.name
             binding.calcIcon.setImageDrawable(ContextCompat.getDrawable(context, calc.icon))
 
-            //binding.notesBtn.setOnClickListener {
-            //    if (context is MainActivity) {
-            //        context.viewNoteForRecordId(record.id)
-            //    }
-            //}
+            binding.calculatorRowLayout.setOnClickListener {
+                when (calc.name){
+                    "mortgage" -> {
+                        val intent = Intent(this, )
+                    }
+                }
+            }
 
         }
 

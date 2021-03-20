@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Kalk">
+        <activity android:name=".PercentageCalculator"></activity>
+        <activity android:name=".InvestmentReturnCalculator" />
+        <activity android:name=".CompoundInterestCalculator" />
+        <activity android:name=".LoanCalculator" />
+        <activity android:name=".MortgageCalculator" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
