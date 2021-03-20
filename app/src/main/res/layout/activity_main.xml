@@ -95,28 +95,21 @@
 
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
     <LinearLayout
+        android:id="@+id/llCalculators"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <include layout="@layout/calculator_row_mortgage" />
-
-        <include layout="@layout/calculator_row_loan" />
-
-        <include layout="@layout/calculator_row_compound_interest" />
-
-        <include layout="@layout/calculator_row_investment_return" />
-
-        <include layout="@layout/calculator_row_percentage" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCalculators"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingBottom="80dp" />
 
     </LinearLayout>
-
-    </ScrollView>
 
 </LinearLayout>
 
