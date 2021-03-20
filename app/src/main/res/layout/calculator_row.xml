@@ -8,8 +8,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_margin="20dp"
-    android:foreground=""
     android:background="@drawable/calculator_tile_background"
+    android:foreground="?attr/selectableItemBackground"
     android:gravity="center_vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout

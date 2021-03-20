@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.RecyclerView
 import com.spudg.kalk.databinding.CalculatorRowBinding
@@ -32,11 +33,17 @@ class CalculatorAdapter(private val context: Context, private val items: ArrayLi
             binding.calcIcon.setImageDrawable(ContextCompat.getDrawable(context, calc.icon))
 
             binding.calculatorRowLayout.setOnClickListener {
-                when (calc.name){
-                    "mortgage" -> {
-                        val intent = Intent(this, )
+                if (context is MainActivity) {
+                    when (calc.name){
+                        "Mortgage" -> context.gotoMortgageCalc()
+                        "Loan" -> context.gotoLoanCalc()
+                        "Compound Interest" -> context.gotoCompoundInterestCalc()
+                        "Investment Return" -> context.gotoInvestmentReturnCalc()
+                        "Percentage" -> context.gotoPercentageCalc()
                     }
+
                 }
+
             }
 
         }
