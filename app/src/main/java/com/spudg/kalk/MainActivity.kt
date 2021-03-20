@@ -36,31 +36,26 @@ class MainActivity : AppCompatActivity() {
     fun gotoMortgageCalc() {
         val intent = Intent(this, MortgageCalculator::class.java)
         startActivity(intent)
-        finish()
     }
 
     fun gotoLoanCalc() {
         val intent = Intent(this, LoanCalculator::class.java)
         startActivity(intent)
-        finish()
     }
 
     fun gotoCompoundInterestCalc() {
         val intent = Intent(this, CompoundInterestCalculator::class.java)
         startActivity(intent)
-        finish()
     }
 
     fun gotoInvestmentReturnCalc() {
         val intent = Intent(this, InvestmentReturnCalculator::class.java)
         startActivity(intent)
-        finish()
     }
 
     fun gotoPercentageCalc() {
         val intent = Intent(this, PercentageCalculator::class.java)
         startActivity(intent)
-        finish()
     }
 
 }
