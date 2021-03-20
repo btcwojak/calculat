@@ -7,6 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".MortgageCalculator">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_weight="0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/open_sans_light"
+        android:text="Mortgage Calculator"
+        android:textSize="26sp"
+        android:gravity="center" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etLayoutHousePrice"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -22,7 +44,9 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/open_sans_light"
             android:hint="House price"
-            android:inputType="text" />
+            android:maxLength="10"
+            android:maxLines="1"
+            android:inputType="numberDecimal" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -41,7 +65,9 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/open_sans_light"
             android:hint="Deposit"
-            android:inputType="text" />
+            android:maxLength="10"
+            android:maxLines="1"
+            android:inputType="numberDecimal" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,7 +86,9 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/open_sans_light"
             android:hint="Term"
-            android:inputType="text" />
+            android:maxLength="5"
+            android:maxLines="1"
+            android:inputType="number" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -79,64 +107,140 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/open_sans_light"
             android:hint="Interest rate"
-            android:inputType="text" />
+            android:maxLength="5"
+            android:maxLines="1"
+            android:inputType="numberDecimal" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <TextView
         android:id="@+id/btnCalculate"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:text="Calculate"
-        android:textColor="@android:color/black" />
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/open_sans_light"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:background="@drawable/calculator_tile_background"/>
 
-    <TextView
-        android:id="@+id/housePrice"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="24sp"
-        tools:text = "House price - £500,000" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="2dp"
+            android:background="@drawable/divider" />
 
-    <TextView
-        android:id="@+id/deposit"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="24sp"
-        tools:text = "Less deposit - (£150,000)" />
 
-    <TextView
-        android:id="@+id/totalBorrowing"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="24sp"
-        tools:text = "Total borrowing - £350,000" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="House price" />
 
-    <TextView
-        android:id="@+id/term"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="20sp"
-        tools:text = "Length - 25 years" />
+                <TextView
+                    android:id="@+id/housePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:layout_gravity="center_horizontal"
+                    tools:text = "£500,000" />
 
-    <TextView
-        android:id="@+id/interestRate"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="20sp"
-        tools:text = "Interest rate - 2.15%" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Less deposit" />
 
-    <TextView
-        android:id="@+id/totalInterest"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="24sp"
-        tools:text="Total interest - £57,000" />
+            <TextView
+                android:id="@+id/deposit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_gravity="center_horizontal"
+                tools:text = "(£30,000)" />
 
-    <TextView
-        android:id="@+id/monthlyRepayment"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="24sp"
-        tools:text="Monthly payment - £789.22" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Total to borrow" />
+
+            <TextView
+                android:id="@+id/totalBorrowing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_gravity="center_horizontal"
+                tools:text = "£470,000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Term (length)" />
+
+            <TextView
+                android:id="@+id/term"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_gravity="center_horizontal"
+                tools:text = "25 years" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Interest rate" />
+
+            <TextView
+                android:id="@+id/interestRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_gravity="center_horizontal"
+                tools:text = "2.15%" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Total interest to pay" />
+
+            <TextView
+                android:id="@+id/totalInterest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_gravity="center_horizontal"
+                tools:text = "£57,928" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Monthly repayment" />
+
+            <TextView
+                android:id="@+id/monthlyRepayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="50dp"
+                tools:text = "£1,128" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
