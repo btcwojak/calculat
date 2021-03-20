@@ -3,6 +3,7 @@ package com.spudg.kalk
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.RecyclerView
 import com.spudg.kalk.databinding.CalculatorRowBinding
@@ -27,7 +28,7 @@ class CalculatorAdapter(private val context: Context, private val items: ArrayLi
             val calc = items[position]
 
             binding.calcName.text = calc.name
-            binding.calcIcon.background = R.drawable.house.toDrawable()
+            binding.calcIcon.setImageDrawable(ContextCompat.getDrawable(context, calc.icon))
 
             //binding.notesBtn.setOnClickListener {
             //    if (context is MainActivity) {

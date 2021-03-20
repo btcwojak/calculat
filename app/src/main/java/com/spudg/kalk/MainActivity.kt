@@ -2,8 +2,6 @@ package com.spudg.kalk
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.spudg.kalk.databinding.ActivityMainBinding
 
@@ -17,17 +15,17 @@ class MainActivity : AppCompatActivity() {
         val view = bindingMain.root
         setContentView(view)
 
-        setUpCalculatorList()
+    setUpCalculatorList()
 
     }
 
     private fun setUpCalculatorList() {
         val calculators: ArrayList<CalculatorModel> = ArrayList()
-        calculators.add(CalculatorModel("Mortgage",R.drawable.house))
-        calculators.add(CalculatorModel("Loan",R.drawable.house))
-        calculators.add(CalculatorModel("Compound Interest",R.drawable.money))
-        calculators.add(CalculatorModel("Investment Return",R.drawable.house))
-        calculators.add(CalculatorModel("Percentage",R.drawable.house))
+        calculators.add(CalculatorModel("Mortgage",R.drawable.mortgage))
+        calculators.add(CalculatorModel("Loan",R.drawable.loan))
+        calculators.add(CalculatorModel("Compound Interest",R.drawable.compound_interest))
+        calculators.add(CalculatorModel("Investment Return",R.drawable.investment_return))
+        calculators.add(CalculatorModel("Percentage",R.drawable.percentage))
         val manager = LinearLayoutManager(this)
         bindingMain.rvCalculators.layoutManager = manager
         val calcAdapter = CalculatorAdapter(this, calculators)

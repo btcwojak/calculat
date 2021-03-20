@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:elevation="25dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -26,7 +27,7 @@
             android:fontFamily="@font/open_sans_light"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
-            android:text="Compound Interest" />
+            tools:text="Compound Interest" />
 
         <ImageView
             android:id="@+id/calc_icon"
@@ -36,7 +37,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/house"/>
+            tools:background="@drawable/mortgage"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
