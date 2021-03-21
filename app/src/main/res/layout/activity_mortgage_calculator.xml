@@ -27,7 +27,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etLayoutHousePrice"
@@ -119,7 +119,7 @@
         android:layout_height="50dp"
         android:text="Calculate"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/open_sans_light"
         android:foreground="?attr/selectableItemBackground"
@@ -130,15 +130,21 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_marginBottom="25dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_height="2dp"
             android:background="@drawable/divider" />
 
+            <LinearLayout
+                android:id="@+id/calcResultsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/open_sans_light"
                     android:text="House price" />
 
                 <TextView
@@ -147,6 +153,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="24sp"
                     android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/open_sans_light"
                     tools:text = "£500,000" />
 
             <TextView
@@ -154,6 +161,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/open_sans_light"
                 android:text="Less deposit" />
 
             <TextView
@@ -161,6 +169,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
+                android:fontFamily="@font/open_sans_light"
                 android:layout_gravity="center_horizontal"
                 tools:text = "(£30,000)" />
 
@@ -168,6 +177,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:fontFamily="@font/open_sans_light"
                 android:layout_gravity="center_horizontal"
                 android:text="Total to borrow" />
 
@@ -177,18 +187,21 @@
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
                 android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/open_sans_light"
                 tools:text = "£470,000" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
+                android:fontFamily="@font/open_sans_light"
                 android:layout_gravity="center_horizontal"
                 android:text="Term (length)" />
 
             <TextView
                 android:id="@+id/term"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/open_sans_light"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
                 android:layout_gravity="center_horizontal"
@@ -197,6 +210,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_light"
                 android:layout_marginTop="25dp"
                 android:layout_gravity="center_horizontal"
                 android:text="Interest rate" />
@@ -205,6 +219,7 @@
                 android:id="@+id/interestRate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_light"
                 android:textSize="24sp"
                 android:layout_gravity="center_horizontal"
                 tools:text = "2.15%" />
@@ -212,6 +227,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_light"
                 android:layout_marginTop="25dp"
                 android:layout_gravity="center_horizontal"
                 android:text="Total interest to pay" />
@@ -222,10 +238,12 @@
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
                 android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/open_sans_light"
                 tools:text = "£57,928" />
 
             <TextView
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/open_sans_light"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_gravity="center_horizontal"
@@ -236,14 +254,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
+                android:fontFamily="@font/open_sans_light"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="40dp"
                 tools:text = "£1,128" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:gravity="center_horizontal"
+                    android:fontFamily="@font/open_sans_light"
+                    android:text="Mortgage balance over term"/>
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/leftToPayLineChart"
                 android:layout_width="match_parent"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_height="300dp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

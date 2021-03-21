@@ -3,6 +3,7 @@ package com.spudg.kalk
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.core.content.res.ResourcesCompat
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.LineChart
@@ -27,6 +28,8 @@ class MortgageCalculator : AppCompatActivity() {
 
         val gbpFormatter: NumberFormat = DecimalFormat("£#,##0.00")
         val percentFormatter: NumberFormat = DecimalFormat("#,##0.00%")
+
+        bindingMortCalc.calcResultsLayout.visibility = View.GONE
 
         bindingMortCalc.btnCalculate.setOnClickListener {
 
@@ -91,6 +94,7 @@ class MortgageCalculator : AppCompatActivity() {
             chartLine.data = dataLine
         }
 
+        dataLine.setDrawValues(false)
 
         chartLine.animateY(800)
         chartLine.setNoDataText("No data yet.")
@@ -122,7 +126,7 @@ class MortgageCalculator : AppCompatActivity() {
 
         chartLine.invalidate()
 
-
+        bindingMortCalc.calcResultsLayout.visibility = View.VISIBLE
 
     }
 
