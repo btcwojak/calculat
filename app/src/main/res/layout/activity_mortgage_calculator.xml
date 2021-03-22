@@ -7,6 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".MortgageCalculator">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/backToCalcListFromMortCalc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/back_btn_padding"
+            android:contentDescription="Back"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_weight="0"
@@ -17,7 +36,10 @@
         android:fontFamily="@font/open_sans_light"
         android:text="Mortgage Calculator"
         android:textSize="26sp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:layout_gravity="center"/>
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,41 +52,20 @@
             android:layout_height="wrap_content">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etLayoutHousePrice"
+        android:id="@+id/etBorrowingLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp">
+        android:layout_marginEnd="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etHousePrice"
+            android:id="@+id/etBorrowing"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/open_sans_light"
-            android:hint="House price"
-            android:maxLength="10"
-            android:maxLines="1"
-            android:inputType="numberDecimal" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etDepositLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etDeposit"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/open_sans_light"
-            android:hint="Deposit"
+            android:hint="How much to borrow"
             android:maxLength="10"
             android:maxLines="1"
             android:inputType="numberDecimal" />
@@ -76,16 +77,16 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp">
+        android:layout_marginEnd="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etTerm"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/open_sans_light"
-            android:hint="Term"
+            android:hint="Term (years)"
             android:maxLength="5"
             android:maxLines="1"
             android:inputType="number" />
@@ -97,9 +98,9 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp">
+        android:layout_marginEnd="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etInterest"
@@ -140,46 +141,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/open_sans_light"
-                    android:text="House price" />
-
-                <TextView
-                    android:id="@+id/housePrice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/open_sans_light"
-                    tools:text = "£500,000" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/open_sans_light"
-                android:text="Less deposit" />
-
-            <TextView
-                android:id="@+id/deposit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:fontFamily="@font/open_sans_light"
-                android:layout_gravity="center_horizontal"
-                tools:text = "(£30,000)" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/open_sans_light"
                 android:layout_gravity="center_horizontal"
-                android:text="Total to borrow" />
+                android:text="Mortgage amount" />
 
             <TextView
                 android:id="@+id/totalBorrowing"

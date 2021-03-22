@@ -1,9 +1,12 @@
 package com.spudg.kalk
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.core.content.res.ResourcesCompat
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.LineChart
@@ -29,20 +32,26 @@ class MortgageCalculator : AppCompatActivity() {
         val gbpFormatter: NumberFormat = DecimalFormat("£#,##0.00")
         val percentFormatter: NumberFormat = DecimalFormat("#,##0.00%")
 
+        bindingMortCalc.backToCalcListFromMortCalc.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         bindingMortCalc.calcResultsLayout.visibility = View.GONE
 
         bindingMortCalc.btnCalculate.setOnClickListener {
 
-            val housePrice = bindingMortCalc.etHousePrice.text.toString().toFloat()
-            val deposit = bindingMortCalc.etDeposit.text.toString().toFloat()
+            this.currentFocus?.let { view ->
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+                imm?.hideSoftInputFromWindow(view.windowToken, 0)
+            }
+
+            val borrowing = bindingMortCalc.etBorrowing.text.toString().toFloat()
             val term = bindingMortCalc.etTerm.text.toString().toFloat()
             val period = 12
             val interestRate = bindingMortCalc.etInterest.text.toString().toFloat()/100
 
-            val borrowing = housePrice - deposit
-
-            bindingMortCalc.housePrice.text = gbpFormatter.format(housePrice)
-            bindingMortCalc.deposit.text = gbpFormatter.format(deposit)
             bindingMortCalc.totalBorrowing.text = gbpFormatter.format(borrowing)
             bindingMortCalc.interestRate.text = percentFormatter.format(interestRate)
             bindingMortCalc.term.text = "${term.toInt()} years"
@@ -55,6 +64,11 @@ class MortgageCalculator : AppCompatActivity() {
             repeat ((term*period).toInt()) {
                 runningToRepay = runningToRepay + (runningToRepay*interestRate)/12 - monthlyPayment
                 monthlyLeftToPay.add(runningToRepay)
+            }
+
+            val length = monthlyLeftToPay.size
+            if (monthlyLeftToPay[length-1] != 0F) {
+                monthlyLeftToPay[length-1] = 0F
             }
 
             val yearlyLeftToPay: ArrayList<Float> = arrayListOf()
