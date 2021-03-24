@@ -125,8 +125,8 @@
         android:fontFamily="@font/open_sans_light"
         android:foreground="?attr/selectableItemBackground"
         android:gravity="center"
-        android:textColor="@android:color/black"
-        android:background="@drawable/calculator_tile_background"/>
+        android:textColor="@color/colorAccent"
+        android:background="@drawable/calculate_btn_background"/>
 
         <ImageView
             android:layout_width="match_parent"

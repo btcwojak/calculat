@@ -2,7 +2,7 @@
     android:id="@+id/calculatorRowLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="75dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:elevation="25dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"

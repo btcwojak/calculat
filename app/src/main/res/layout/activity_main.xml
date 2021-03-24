@@ -30,7 +30,7 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:text="Saved results"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
         <TextView
@@ -47,7 +47,7 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:text="More"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
     </LinearLayout>
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="@font/open_sans_light"
                 android:text="All Calculators"
                 android:textColor="#000000"
@@ -99,7 +99,6 @@
         android:id="@+id/llCalculators"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.recyclerview.widget.RecyclerView

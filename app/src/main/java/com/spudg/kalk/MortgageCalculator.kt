@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.LineChart
@@ -42,45 +43,52 @@ class MortgageCalculator : AppCompatActivity() {
 
         bindingMortCalc.btnCalculate.setOnClickListener {
 
-            this.currentFocus?.let { view ->
-                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
-                imm?.hideSoftInputFromWindow(view.windowToken, 0)
+            if (bindingMortCalc.etBorrowing.text.toString().isNotEmpty() && bindingMortCalc.etInterest.text.toString().isNotEmpty() && bindingMortCalc.etTerm.text.toString().isNotEmpty()) {
+                this.currentFocus?.let { view ->
+                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+                    imm?.hideSoftInputFromWindow(view.windowToken, 0)
+                }
+
+                val borrowing = bindingMortCalc.etBorrowing.text.toString().toFloat()
+                val term = bindingMortCalc.etTerm.text.toString().toFloat()
+                val period = 12
+                val interestRate = bindingMortCalc.etInterest.text.toString().toFloat()/100
+
+                bindingMortCalc.totalBorrowing.text = gbpFormatter.format(borrowing)
+                bindingMortCalc.interestRate.text = percentFormatter.format(interestRate)
+                bindingMortCalc.term.text = "${term.toInt()} years"
+
+                val monthlyPayment = (borrowing * (1 + interestRate / period).pow(term * period) * (interestRate / period) / ((1 + interestRate / period).pow(term * period) - 1))
+
+                val monthlyLeftToPay: ArrayList<Float> = arrayListOf()
+                monthlyLeftToPay.add(borrowing)
+                var runningToRepay = borrowing
+                repeat ((term*period).toInt()) {
+                    runningToRepay = runningToRepay + (runningToRepay*interestRate)/12 - monthlyPayment
+                    monthlyLeftToPay.add(runningToRepay)
+                }
+
+                val length = monthlyLeftToPay.size
+                if (monthlyLeftToPay[length-1] != 0F) {
+                    monthlyLeftToPay[length-1] = 0F
+                }
+
+                val yearlyLeftToPay: ArrayList<Float> = arrayListOf()
+                (0 until ((period*term)+1).toInt() step 12).asIterable()
+                        .forEach { i ->
+                            yearlyLeftToPay.add(monthlyLeftToPay[i])
+                        }
+
+                bindingMortCalc.totalInterest.text = gbpFormatter.format((monthlyPayment*term*period)-borrowing)
+                bindingMortCalc.monthlyRepayment.text = gbpFormatter.format(monthlyPayment)
+
+                setUpChart(yearlyLeftToPay)
+
+            } else {
+                Toast.makeText(this, "Borrowing amount, interest rate or term can't be blank", Toast.LENGTH_SHORT).show()
             }
 
-            val borrowing = bindingMortCalc.etBorrowing.text.toString().toFloat()
-            val term = bindingMortCalc.etTerm.text.toString().toFloat()
-            val period = 12
-            val interestRate = bindingMortCalc.etInterest.text.toString().toFloat()/100
 
-            bindingMortCalc.totalBorrowing.text = gbpFormatter.format(borrowing)
-            bindingMortCalc.interestRate.text = percentFormatter.format(interestRate)
-            bindingMortCalc.term.text = "${term.toInt()} years"
-
-            val monthlyPayment = (borrowing * (1 + interestRate / period).pow(term * period) * (interestRate / period) / ((1 + interestRate / period).pow(term * period) - 1))
-
-            val monthlyLeftToPay: ArrayList<Float> = arrayListOf()
-            monthlyLeftToPay.add(borrowing)
-            var runningToRepay = borrowing
-            repeat ((term*period).toInt()) {
-                runningToRepay = runningToRepay + (runningToRepay*interestRate)/12 - monthlyPayment
-                monthlyLeftToPay.add(runningToRepay)
-            }
-
-            val length = monthlyLeftToPay.size
-            if (monthlyLeftToPay[length-1] != 0F) {
-                monthlyLeftToPay[length-1] = 0F
-            }
-
-            val yearlyLeftToPay: ArrayList<Float> = arrayListOf()
-            (0 until ((period*term)+1).toInt() step 12).asIterable()
-                    .forEach { i ->
-                        yearlyLeftToPay.add(monthlyLeftToPay[i])
-                    }
-
-            bindingMortCalc.totalInterest.text = gbpFormatter.format((monthlyPayment*term*period)-borrowing)
-            bindingMortCalc.monthlyRepayment.text = gbpFormatter.format(monthlyPayment)
-
-            setUpChart(yearlyLeftToPay)
 
         }
 
