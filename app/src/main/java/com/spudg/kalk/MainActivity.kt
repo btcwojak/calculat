@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpCalculatorList() {
         val calculators: ArrayList<CalculatorModel> = ArrayList()
-        calculators.add(CalculatorModel("Mortgage",R.drawable.mortgage))
-        calculators.add(CalculatorModel("Loan",R.drawable.loan))
+        calculators.add(CalculatorModel("Mortgage Repayment",R.drawable.mortgage))
+        calculators.add(CalculatorModel("Mortgage Loan",R.drawable.loan))
         calculators.add(CalculatorModel("Compound Interest",R.drawable.compound_interest))
-        calculators.add(CalculatorModel("Investment Return",R.drawable.investment_return))
-        calculators.add(CalculatorModel("Percentage",R.drawable.percentage))
+        calculators.add(CalculatorModel("APR %",R.drawable.investment_return))
+        calculators.add(CalculatorModel("Percentages",R.drawable.percentage))
         val manager = LinearLayoutManager(this)
         bindingMain.rvCalculators.layoutManager = manager
         val calcAdapter = CalculatorAdapter(this, calculators)
@@ -34,12 +34,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun gotoMortgageCalc() {
-        val intent = Intent(this, MortgageCalculator::class.java)
+        val intent = Intent(this, MortgageRepaymentCalculator::class.java)
         startActivity(intent)
     }
 
     fun gotoLoanCalc() {
-        val intent = Intent(this, LoanCalculator::class.java)
+        val intent = Intent(this, MortgageLoanCalculator::class.java)
         startActivity(intent)
     }
 

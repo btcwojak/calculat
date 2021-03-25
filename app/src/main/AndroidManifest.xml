@@ -24,11 +24,11 @@
         <activity
             android:theme="@style/Kalk"
             android:screenOrientation="portrait"
-            android:name=".LoanCalculator" />
+            android:name=".MortgageLoanCalculator" />
         <activity
             android:theme="@style/Kalk"
             android:screenOrientation="portrait"
-            android:name=".MortgageCalculator" />
+            android:name=".MortgageRepaymentCalculator" />
         <activity
             android:theme="@style/Kalk"
             android:screenOrientation="portrait"

@@ -4,59 +4,57 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
-import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.ValueFormatter
-import com.spudg.kalk.databinding.ActivityMortgageCalculatorBinding
+import com.spudg.kalk.databinding.ActivityMortgageRepaymentCalculatorBinding
 import java.text.DecimalFormat
 import java.text.NumberFormat
 import kotlin.math.pow
 
-class MortgageCalculator : AppCompatActivity() {
+class MortgageRepaymentCalculator : AppCompatActivity() {
 
-    private lateinit var bindingMortCalc: ActivityMortgageCalculatorBinding
+    private lateinit var bindingMortRepayCalc: ActivityMortgageRepaymentCalculatorBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingMortCalc = ActivityMortgageCalculatorBinding.inflate(layoutInflater)
-        val view = bindingMortCalc.root
+        bindingMortRepayCalc = ActivityMortgageRepaymentCalculatorBinding.inflate(layoutInflater)
+        val view = bindingMortRepayCalc.root
         setContentView(view)
 
         val gbpFormatter: NumberFormat = DecimalFormat("£#,##0.00")
         val percentFormatter: NumberFormat = DecimalFormat("#,##0.00%")
 
-        bindingMortCalc.backToCalcListFromMortCalc.setOnClickListener {
+        bindingMortRepayCalc.backToCalcListFromMortRepayCalc.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
 
-        bindingMortCalc.calcResultsLayout.visibility = View.GONE
+        bindingMortRepayCalc.calcResultsLayout.visibility = View.GONE
 
-        bindingMortCalc.btnCalculate.setOnClickListener {
+        bindingMortRepayCalc.btnCalculate.setOnClickListener {
 
-            if (bindingMortCalc.etBorrowing.text.toString().isNotEmpty() && bindingMortCalc.etInterest.text.toString().isNotEmpty() && bindingMortCalc.etTerm.text.toString().isNotEmpty()) {
+            if (bindingMortRepayCalc.etBorrowing.text.toString().isNotEmpty() && bindingMortRepayCalc.etInterest.text.toString().isNotEmpty() && bindingMortRepayCalc.etTerm.text.toString().isNotEmpty()) {
                 this.currentFocus?.let { view ->
                     val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
                     imm?.hideSoftInputFromWindow(view.windowToken, 0)
                 }
 
-                val borrowing = bindingMortCalc.etBorrowing.text.toString().toFloat()
-                val term = bindingMortCalc.etTerm.text.toString().toFloat()
+                val borrowing = bindingMortRepayCalc.etBorrowing.text.toString().toFloat()
+                val term = bindingMortRepayCalc.etTerm.text.toString().toFloat()
                 val period = 12
-                val interestRate = bindingMortCalc.etInterest.text.toString().toFloat()/100
+                val interestRate = bindingMortRepayCalc.etInterest.text.toString().toFloat()/100
 
-                bindingMortCalc.totalBorrowing.text = gbpFormatter.format(borrowing)
-                bindingMortCalc.interestRate.text = percentFormatter.format(interestRate)
-                bindingMortCalc.term.text = "${term.toInt()} years"
+                bindingMortRepayCalc.totalBorrowing.text = gbpFormatter.format(borrowing)
+                bindingMortRepayCalc.interestRate.text = percentFormatter.format(interestRate)
+                bindingMortRepayCalc.term.text = "${term.toInt()} years"
 
                 val monthlyPayment = (borrowing * (1 + interestRate / period).pow(term * period) * (interestRate / period) / ((1 + interestRate / period).pow(term * period) - 1))
 
@@ -79,8 +77,8 @@ class MortgageCalculator : AppCompatActivity() {
                             yearlyLeftToPay.add(monthlyLeftToPay[i])
                         }
 
-                bindingMortCalc.totalInterest.text = gbpFormatter.format((monthlyPayment*term*period)-borrowing)
-                bindingMortCalc.monthlyRepayment.text = gbpFormatter.format(monthlyPayment)
+                bindingMortRepayCalc.totalInterest.text = gbpFormatter.format((monthlyPayment*term*period)-borrowing)
+                bindingMortRepayCalc.monthlyRepayment.text = gbpFormatter.format(monthlyPayment)
 
                 setUpChart(yearlyLeftToPay)
 
@@ -111,7 +109,7 @@ class MortgageCalculator : AppCompatActivity() {
         val dataLine = LineData(dataSetLine)
         dataSetLine.color = R.color.colorAccent
 
-        val chartLine: LineChart = bindingMortCalc.leftToPayLineChart
+        val chartLine: LineChart = bindingMortRepayCalc.leftToPayLineChart
         if (entriesLine.size > 0) {
             chartLine.data = dataLine
         }
@@ -148,7 +146,7 @@ class MortgageCalculator : AppCompatActivity() {
 
         chartLine.invalidate()
 
-        bindingMortCalc.calcResultsLayout.visibility = View.VISIBLE
+        bindingMortRepayCalc.calcResultsLayout.visibility = View.VISIBLE
 
     }
 
