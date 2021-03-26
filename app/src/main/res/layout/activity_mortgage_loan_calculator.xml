@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MortgageRepaymentCalculator">
+    tools:context=".MortgageLoanCalculator">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
             android:layout_marginBottom="20dp"
             android:textColor="@android:color/black"
             android:fontFamily="@font/open_sans_light"
-            android:text="Mortgage Calculator"
+            android:text="Mortgage\n Loan Calculator"
             android:textSize="26sp"
             android:gravity="center"
             android:layout_gravity="center"/>
@@ -65,7 +65,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Maximum monthly payment"
+                    android:hint="Monthly repayment"
                     android:maxLength="10"
                     android:maxLines="1"
                     android:inputType="numberDecimal" />
