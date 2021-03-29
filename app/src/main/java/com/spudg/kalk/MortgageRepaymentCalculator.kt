@@ -83,7 +83,7 @@ class MortgageRepaymentCalculator : AppCompatActivity() {
                 setUpChart(yearlyLeftToPay)
 
             } else {
-                Toast.makeText(this, "Borrowing amount, interest rate or term can't be blank", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Make sure each field is filled in", Toast.LENGTH_SHORT).show()
             }
 
 

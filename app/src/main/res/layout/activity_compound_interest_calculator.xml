@@ -156,6 +156,12 @@
                 android:layout_height="2dp"
                 android:background="@drawable/divider" />
 
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/calcResultsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -254,10 +260,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="40dp"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/open_sans_light"
                 tools:text = "£1,982,112.06" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:gravity="center_horizontal"
+                    android:fontFamily="@font/open_sans_light"
+                    android:text="Annual balance over term"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/yearlyBalanceLineChart"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="300dp" />
+
+        </LinearLayout>
 
         </LinearLayout>
 
