@@ -1,12 +1,9 @@
 package com.spudg.kalk
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.RecyclerView
 import com.spudg.kalk.databinding.CalculatorRowBinding
 import java.util.*
@@ -38,8 +35,8 @@ class CalculatorAdapter(private val context: Context, private val items: ArrayLi
                         "Mortgage Repayment" -> context.gotoMortgageCalc()
                         "Mortgage Loan" -> context.gotoLoanCalc()
                         "Compound Interest" -> context.gotoCompoundInterestCalc()
-                        "APR %" -> context.gotoInvestmentReturnCalc()
                         "Percentages" -> context.gotoPercentageCalc()
+                        "Net Worth" -> context. gotoNetWorthCalc()
                     }
 
                 }

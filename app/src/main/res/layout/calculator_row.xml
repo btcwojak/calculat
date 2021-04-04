@@ -40,7 +40,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="20dp"
-            tools:background="@drawable/mortgage"/>
+            tools:background="@drawable/mortgage_repayment"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

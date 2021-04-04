@@ -9,32 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Kalk">
+        <activity android:name=".NetWorthCalculator"></activity>
         <activity
-            android:theme="@style/Kalk"
+            android:name=".PercentageCalculator"
             android:screenOrientation="portrait"
-            android:name=".PercentageCalculator"/>
+            android:theme="@style/Kalk" />
         <activity
-            android:theme="@style/Kalk"
+            android:name=".CompoundInterestCalculator"
             android:screenOrientation="portrait"
-            android:name=".InvestmentReturnCalculator" />
+            android:theme="@style/Kalk" />
         <activity
-            android:theme="@style/Kalk"
+            android:name=".MortgageLoanCalculator"
             android:screenOrientation="portrait"
-            android:name=".CompoundInterestCalculator" />
+            android:theme="@style/Kalk" />
         <activity
-            android:theme="@style/Kalk"
+            android:name=".MortgageRepaymentCalculator"
             android:screenOrientation="portrait"
-            android:name=".MortgageLoanCalculator" />
+            android:theme="@style/Kalk" />
         <activity
-            android:theme="@style/Kalk"
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:name=".MortgageRepaymentCalculator" />
-        <activity
-            android:theme="@style/Kalk"
-            android:screenOrientation="portrait"
-            android:name=".MainActivity">
+            android:theme="@style/Kalk">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

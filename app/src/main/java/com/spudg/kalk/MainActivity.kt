@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpCalculatorList() {
         val calculators: ArrayList<CalculatorModel> = ArrayList()
-        calculators.add(CalculatorModel("Mortgage Repayment",R.drawable.mortgage))
-        calculators.add(CalculatorModel("Mortgage Loan",R.drawable.loan))
+        calculators.add(CalculatorModel("Mortgage Repayment",R.drawable.mortgage_repayment))
+        calculators.add(CalculatorModel("Mortgage Loan",R.drawable.mortgage_loan))
         calculators.add(CalculatorModel("Compound Interest",R.drawable.compound_interest))
-        calculators.add(CalculatorModel("APR %",R.drawable.investment_return))
         calculators.add(CalculatorModel("Percentages",R.drawable.percentage))
+        calculators.add(CalculatorModel("Net Worth",R.drawable.net_worth))
         val manager = LinearLayoutManager(this)
         bindingMain.rvCalculators.layoutManager = manager
         val calcAdapter = CalculatorAdapter(this, calculators)
@@ -48,13 +48,13 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun gotoInvestmentReturnCalc() {
-        val intent = Intent(this, InvestmentReturnCalculator::class.java)
+    fun gotoPercentageCalc() {
+        val intent = Intent(this, PercentageCalculator::class.java)
         startActivity(intent)
     }
 
-    fun gotoPercentageCalc() {
-        val intent = Intent(this, PercentageCalculator::class.java)
+    fun gotoNetWorthCalc() {
+        val intent = Intent(this, NetWorthCalculator::class.java)
         startActivity(intent)
     }
 
