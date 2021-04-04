@@ -87,7 +87,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
                     android:hint="Monthly deposit"
-                    android:maxLength="5"
+                    android:maxLength="10"
                     android:maxLines="1"
                     android:inputType="numberDecimal" />
 

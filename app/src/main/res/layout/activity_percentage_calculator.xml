@@ -93,7 +93,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:maxLength="5"
+                    android:maxLength="10"
                     android:maxLines="1"
                     android:inputType="numberDecimal" />
 
@@ -155,7 +155,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:fontFamily="@font/open_sans_light"
-                        android:maxLength="5"
+                        android:maxLength="10"
                         android:maxLines="1"
                         android:inputType="numberDecimal" />
 
@@ -217,7 +217,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:fontFamily="@font/open_sans_light"
-                        android:maxLength="5"
+                        android:maxLength="10"
                         android:maxLines="1"
                         android:inputType="numberDecimal" />
 
@@ -278,7 +278,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:fontFamily="@font/open_sans_light"
-                        android:maxLength="5"
+                        android:maxLength="10"
                         android:maxLines="1"
                         android:inputType="numberDecimal" />
 
@@ -287,13 +287,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="%"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="of"/>
+                    android:layout_marginLeft="20dp"
+                    android:text="% of"/>
 
                 <TextView
                     android:id="@+id/Q4A1"

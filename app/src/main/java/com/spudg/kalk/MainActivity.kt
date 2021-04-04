@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         calculators.add(CalculatorModel("Compound Interest",R.drawable.compound_interest))
         calculators.add(CalculatorModel("Percentages",R.drawable.percentage))
         calculators.add(CalculatorModel("Net Worth",R.drawable.net_worth))
+        calculators.add(CalculatorModel("Financial Independence",R.drawable.fi))
         val manager = LinearLayoutManager(this)
         bindingMain.rvCalculators.layoutManager = manager
         val calcAdapter = CalculatorAdapter(this, calculators)
@@ -55,6 +56,11 @@ class MainActivity : AppCompatActivity() {
 
     fun gotoNetWorthCalc() {
         val intent = Intent(this, NetWorthCalculator::class.java)
+        startActivity(intent)
+    }
+
+    fun gotoFICalc() {
+        val intent = Intent(this, FICalculator::class.java)
         startActivity(intent)
     }
 

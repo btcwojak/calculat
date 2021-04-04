@@ -37,6 +37,7 @@ class CalculatorAdapter(private val context: Context, private val items: ArrayLi
                         "Compound Interest" -> context.gotoCompoundInterestCalc()
                         "Percentages" -> context.gotoPercentageCalc()
                         "Net Worth" -> context. gotoNetWorthCalc()
+                        "Financial Independence" -> context. gotoFICalc()
                     }
 
                 }
