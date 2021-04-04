@@ -22,6 +22,7 @@ class PercentageCalculator : AppCompatActivity() {
         setContentView(view)
 
         val percentFormatter: NumberFormat = DecimalFormat("#,##0.00%")
+        val figureFormatter: NumberFormat = DecimalFormat("#,##0.00")
 
         bindingPercentageCalc.backToCalcListFromPercentageCalc.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -35,7 +36,7 @@ class PercentageCalculator : AppCompatActivity() {
                 var Q1F1 = bindingPercentageCalc.etQ1F1.text.toString().toFloat()
                 var Q1F2 = bindingPercentageCalc.etQ1F2.text.toString().toFloat()
                 var answer = (Q1F1/100)*Q1F2
-                bindingPercentageCalc.Q1A1.text = answer.toString()
+                bindingPercentageCalc.Q1A1.text = figureFormatter.format(answer)
             }
         }
         bindingPercentageCalc.etQ1F2.addTextChangedListener {
@@ -43,7 +44,7 @@ class PercentageCalculator : AppCompatActivity() {
                 var Q1F1 = bindingPercentageCalc.etQ1F1.text.toString().toFloat()
                 var Q1F2 = bindingPercentageCalc.etQ1F2.text.toString().toFloat()
                 var answer = (Q1F1/100)*Q1F2
-                bindingPercentageCalc.Q1A1.text = answer.toString()
+                bindingPercentageCalc.Q1A1.text = figureFormatter.format(answer)
             }
         }
 
@@ -53,7 +54,7 @@ class PercentageCalculator : AppCompatActivity() {
                 var Q2F1 = bindingPercentageCalc.etQ2F1.text.toString().toFloat()
                 var Q2F2 = bindingPercentageCalc.etQ2F2.text.toString().toFloat()
                 var answer = Q2F1/Q2F2
-                bindingPercentageCalc.Q2A1.text = percentFormatter.format(answer)
+                bindingPercentageCalc.Q2A1.text = figureFormatter.format(answer)
             }
         }
         bindingPercentageCalc.etQ2F2.addTextChangedListener {
@@ -61,7 +62,7 @@ class PercentageCalculator : AppCompatActivity() {
                 var Q2F1 = bindingPercentageCalc.etQ2F1.text.toString().toFloat()
                 var Q2F2 = bindingPercentageCalc.etQ2F2.text.toString().toFloat()
                 var answer = Q2F1/Q2F2
-                bindingPercentageCalc.Q2A1.text = percentFormatter.format(answer)
+                bindingPercentageCalc.Q2A1.text = figureFormatter.format(answer)
             }
         }
 
@@ -71,7 +72,7 @@ class PercentageCalculator : AppCompatActivity() {
                 var Q3F1 = bindingPercentageCalc.etQ3F1.text.toString().toFloat() //3
                 var Q3F2 = bindingPercentageCalc.etQ3F2.text.toString().toFloat() //6
                 var answer = (Q3F2-Q3F1)/Q3F1
-                bindingPercentageCalc.Q3A1.text = percentFormatter.format(answer)
+                bindingPercentageCalc.Q3A1.text = figureFormatter.format(answer)
             }
         }
         bindingPercentageCalc.etQ3F2.addTextChangedListener {
@@ -79,7 +80,7 @@ class PercentageCalculator : AppCompatActivity() {
                 var Q3F1 = bindingPercentageCalc.etQ3F1.text.toString().toFloat()
                 var Q3F2 = bindingPercentageCalc.etQ3F2.text.toString().toFloat()
                 var answer = (Q3F2-Q3F1)/Q3F1
-                bindingPercentageCalc.Q3A1.text = percentFormatter.format(answer)
+                bindingPercentageCalc.Q3A1.text = figureFormatter.format(answer)
             }
         }
 
@@ -89,7 +90,7 @@ class PercentageCalculator : AppCompatActivity() {
                 var Q4F1 = bindingPercentageCalc.etQ4F1.text.toString().toFloat()
                 var Q4F2 = bindingPercentageCalc.etQ4F2.text.toString().toFloat()
                 var answer = Q4F1/(Q4F2/100)
-                bindingPercentageCalc.Q4A1.text = answer.toString()
+                bindingPercentageCalc.Q4A1.text = figureFormatter.format(answer)
             }
         }
         bindingPercentageCalc.etQ4F2.addTextChangedListener {
@@ -97,7 +98,7 @@ class PercentageCalculator : AppCompatActivity() {
                 var Q4F1 = bindingPercentageCalc.etQ4F1.text.toString().toFloat()
                 var Q4F2 = bindingPercentageCalc.etQ4F2.text.toString().toFloat()
                 var answer = Q4F1/(Q4F2/100)
-                bindingPercentageCalc.Q4A1.text = answer.toString()
+                bindingPercentageCalc.Q4A1.text = figureFormatter.format(answer)
             }
         }
 
