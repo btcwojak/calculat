@@ -2,12 +2,11 @@ package com.spudg.kalk
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.Legend
@@ -70,50 +69,50 @@ class CompoundInterestCalculator : AppCompatActivity() {
                 bindingCICalc.etInterest.text.toString().toFloat() / 100
             }
 
-                this.currentFocus?.let { view ->
-                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
-                    imm?.hideSoftInputFromWindow(view.windowToken, 0)
-                }
-
-                val compoundedInitialDeposit = initialDeposit * ((1 + (rateOfReturn / 12)).pow(termYears * 12))
-                val compoundedMonthlyDeposits = monthlyDeposit * (((1 + (rateOfReturn / 12)).pow(12 * termYears) - 1) / (rateOfReturn / 12))
-                val totalEndingBalance = compoundedInitialDeposit + compoundedMonthlyDeposits
-                val interestEarned = totalEndingBalance - initialDeposit - (monthlyDeposit * termYears * 12)
-
-                bindingCICalc.initialDeposit.text = gbpFormatter.format(initialDeposit)
-                bindingCICalc.monthlyContribution.text = gbpFormatter.format(monthlyDeposit)
-                bindingCICalc.annualInterest.text = percentFormatter.format(rateOfReturn)
-                bindingCICalc.termYears.text = "${termYears.toInt()} years"
-                bindingCICalc.interestEarned.text = gbpFormatter.format(interestEarned)
-                bindingCICalc.endingBalance.text = gbpFormatter.format(totalEndingBalance)
-
-                val monthlyRunningBalance: ArrayList<Float> = arrayListOf()
-                var runningBalance = initialDeposit
-                monthlyRunningBalance.add(runningBalance)
-                repeat((termYears * 12).toInt()) {
-                    runningBalance += ((runningBalance * rateOfReturn) / 12) + monthlyDeposit
-                    monthlyRunningBalance.add(runningBalance)
-                }
-
-                val yearlyRunningBalance: ArrayList<Float> = arrayListOf()
-                (0 until monthlyRunningBalance.size + 1 step 12).asIterable()
-                        .forEach { i ->
-                            Log.e("test", monthlyRunningBalance[i].toString())
-                            Log.e("test", i.toString())
-                            yearlyRunningBalance.add(monthlyRunningBalance[i])
-                        }
-
-                setUpChart(yearlyRunningBalance)
-
-
+            this.currentFocus?.let { view ->
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+                imm?.hideSoftInputFromWindow(view.windowToken, 0)
             }
 
+            val compoundedInitialDeposit = initialDeposit * ((1 + (rateOfReturn / 12)).pow(termYears * 12))
+            val compoundedMonthlyDeposits = monthlyDeposit * (((1 + (rateOfReturn / 12)).pow(12 * termYears) - 1) / (rateOfReturn / 12))
+            val totalEndingBalance = compoundedInitialDeposit + compoundedMonthlyDeposits
+            val interestEarned = totalEndingBalance - initialDeposit - (monthlyDeposit * termYears * 12)
+
+            bindingCICalc.initialDeposit.text = gbpFormatter.format(initialDeposit)
+            bindingCICalc.monthlyContribution.text = gbpFormatter.format(monthlyDeposit)
+            bindingCICalc.annualInterest.text = percentFormatter.format(rateOfReturn)
+            bindingCICalc.termYears.text = "${termYears.toInt()} years"
+            bindingCICalc.interestEarned.text = gbpFormatter.format(interestEarned)
+            bindingCICalc.endingBalance.text = gbpFormatter.format(totalEndingBalance)
+
+            val monthlyRunningBalance: ArrayList<Float> = arrayListOf()
+            var runningBalance = initialDeposit
+            monthlyRunningBalance.add(runningBalance)
+            repeat((termYears * 12).toInt()) {
+                runningBalance += ((runningBalance * rateOfReturn) / 12) + monthlyDeposit
+                monthlyRunningBalance.add(runningBalance)
+            }
+
+            val yearlyRunningBalance: ArrayList<Float> = arrayListOf()
+            (0 until monthlyRunningBalance.size + 1 step 12).asIterable()
+                    .forEach { i ->
+                        Log.e("test", monthlyRunningBalance[i].toString())
+                        Log.e("test", i.toString())
+                        yearlyRunningBalance.add(monthlyRunningBalance[i])
+                    }
+
+            setUpChart(yearlyRunningBalance)
+
+
         }
+
+    }
 
     private fun setUpChart(yearlyBalance: ArrayList<Float>) {
 
         val yearsInTerm: ArrayList<Int> = arrayListOf()
-        repeat (yearlyBalance.size) {
+        repeat(yearlyBalance.size) {
             yearsInTerm.add(it)
         }
 

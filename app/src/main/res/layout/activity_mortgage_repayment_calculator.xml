@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MortgageRepaymentCalculator">
 
     <LinearLayout
@@ -26,18 +26,18 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_weight="0"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:textColor="@android:color/black"
-        android:fontFamily="@font/open_sans_light"
-        android:text="Mortgage\n Repayment Calculator"
-        android:textSize="26sp"
-        android:gravity="center"
-        android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="0"
+            android:fontFamily="@font/open_sans_light"
+            android:gravity="center"
+            android:text="Mortgage\n Repayment Calculator"
+            android:textColor="@android:color/black"
+            android:textSize="26sp" />
 
     </LinearLayout>
 
@@ -47,93 +47,93 @@
         android:layout_weight="1">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etBorrowingLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etBorrowingLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etBorrowing"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/open_sans_light"
-            android:hint="How much to borrow"
-            android:maxLength="10"
-            android:maxLines="1"
-            android:inputType="numberDecimal" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBorrowing"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/open_sans_light"
+                    android:hint="How much to borrow"
+                    android:inputType="numberDecimal"
+                    android:maxLength="10"
+                    android:maxLines="1" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etTermLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etTermLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etTerm"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/open_sans_light"
-            android:hint="Term (years)"
-            android:maxLength="5"
-            android:maxLines="1"
-            android:inputType="number" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTerm"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/open_sans_light"
+                    android:hint="Term (years)"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:maxLines="1" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etInterestLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etInterestLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etInterest"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/open_sans_light"
-            android:hint="Interest rate"
-            android:maxLength="5"
-            android:maxLines="1"
-            android:inputType="numberDecimal" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etInterest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/open_sans_light"
+                    android:hint="Interest rate"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
+                    android:maxLines="1" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/btnCalculate"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="Calculate"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/open_sans_light"
-        android:foreground="?attr/selectableItemBackground"
-        android:gravity="center"
-        android:textColor="@color/colorAccent"
-        android:background="@drawable/calculate_btn_background"/>
+            <TextView
+                android:id="@+id/btnCalculate"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/calculate_btn_background"
+                android:fontFamily="@font/open_sans_light"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="Calculate"
+                android:textColor="@color/colorAccent" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_marginBottom="25dp"
-            android:layout_marginTop="5dp"
-            android:layout_height="2dp"
-            android:background="@drawable/divider" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/divider" />
 
             <LinearLayout
                 android:id="@+id/calcResultsLayout"
@@ -141,107 +141,107 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:fontFamily="@font/open_sans_light"
-                android:layout_gravity="center_horizontal"
-                android:text="Mortgage amount" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/open_sans_light"
+                    android:text="Mortgage amount" />
 
-            <TextView
-                android:id="@+id/totalBorrowing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/open_sans_light"
-                tools:text = "£470,000" />
+                <TextView
+                    android:id="@+id/totalBorrowing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/open_sans_light"
+                    android:textSize="24sp"
+                    tools:text="£470,000" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:fontFamily="@font/open_sans_light"
-                android:layout_gravity="center_horizontal"
-                android:text="Term (length)" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/open_sans_light"
+                    android:text="Term (length)" />
 
-            <TextView
-                android:id="@+id/term"
-                android:layout_width="wrap_content"
-                android:fontFamily="@font/open_sans_light"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:layout_gravity="center_horizontal"
-                tools:text = "25 years" />
+                <TextView
+                    android:id="@+id/term"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/open_sans_light"
+                    android:textSize="24sp"
+                    tools:text="25 years" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_light"
-                android:layout_marginTop="25dp"
-                android:layout_gravity="center_horizontal"
-                android:text="Interest rate" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/open_sans_light"
+                    android:text="Interest rate" />
 
-            <TextView
-                android:id="@+id/interestRate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_light"
-                android:textSize="24sp"
-                android:layout_gravity="center_horizontal"
-                tools:text = "2.15%" />
+                <TextView
+                    android:id="@+id/interestRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/open_sans_light"
+                    android:textSize="24sp"
+                    tools:text="2.15%" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_light"
-                android:layout_marginTop="25dp"
-                android:layout_gravity="center_horizontal"
-                android:text="Total interest to pay" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/open_sans_light"
+                    android:text="Total interest to pay" />
 
-            <TextView
-                android:id="@+id/totalInterest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/open_sans_light"
-                tools:text = "£57,928" />
+                <TextView
+                    android:id="@+id/totalInterest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/open_sans_light"
+                    android:textSize="24sp"
+                    tools:text="£57,928" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:fontFamily="@font/open_sans_light"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_gravity="center_horizontal"
-                android:text="Monthly repayment" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/open_sans_light"
+                    android:text="Monthly repayment" />
 
-            <TextView
-                android:id="@+id/monthlyRepayment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:fontFamily="@font/open_sans_light"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="40dp"
-                tools:text = "£1,128" />
+                <TextView
+                    android:id="@+id/monthlyRepayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="40dp"
+                    android:fontFamily="@font/open_sans_light"
+                    android:textSize="24sp"
+                    tools:text="£1,128" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:gravity="center_horizontal"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Mortgage balance over term"/>
+                    android:gravity="center_horizontal"
+                    android:text="Mortgage balance over term"
+                    android:textSize="20sp" />
 
-            <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/leftToPayLineChart"
-                android:layout_width="match_parent"
-                android:layout_marginBottom="50dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_height="300dp" />
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/leftToPayLineChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="50dp" />
 
             </LinearLayout>
 

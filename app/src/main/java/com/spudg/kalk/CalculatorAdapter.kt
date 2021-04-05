@@ -31,13 +31,13 @@ class CalculatorAdapter(private val context: Context, private val items: ArrayLi
 
             binding.calculatorRowLayout.setOnClickListener {
                 if (context is MainActivity) {
-                    when (calc.name){
+                    when (calc.name) {
                         "Mortgage Repayment" -> context.gotoMortgageCalc()
                         "Mortgage Loan" -> context.gotoLoanCalc()
                         "Compound Interest" -> context.gotoCompoundInterestCalc()
                         "Percentages" -> context.gotoPercentageCalc()
-                        "Net Worth" -> context. gotoNetWorthCalc()
-                        "Financial Independence" -> context. gotoFICalc()
+                        "Net Worth" -> context.gotoNetWorthCalc()
+                        "Financial Independence" -> context.gotoFICalc()
                     }
 
                 }

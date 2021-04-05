@@ -1,7 +1,7 @@
 package com.spudg.kalk
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
 class FICalculator : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

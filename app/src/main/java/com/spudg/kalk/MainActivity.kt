@@ -1,8 +1,8 @@
 package com.spudg.kalk
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.spudg.kalk.databinding.ActivityMainBinding
 
@@ -16,18 +16,18 @@ class MainActivity : AppCompatActivity() {
         val view = bindingMain.root
         setContentView(view)
 
-    setUpCalculatorList()
+        setUpCalculatorList()
 
     }
 
     private fun setUpCalculatorList() {
         val calculators: ArrayList<CalculatorModel> = ArrayList()
-        calculators.add(CalculatorModel("Mortgage Repayment",R.drawable.mortgage_repayment))
-        calculators.add(CalculatorModel("Mortgage Loan",R.drawable.mortgage_loan))
-        calculators.add(CalculatorModel("Compound Interest",R.drawable.compound_interest))
-        calculators.add(CalculatorModel("Percentages",R.drawable.percentage))
-        calculators.add(CalculatorModel("Net Worth",R.drawable.net_worth))
-        calculators.add(CalculatorModel("Financial Independence",R.drawable.fi))
+        calculators.add(CalculatorModel("Mortgage Repayment", R.drawable.mortgage_repayment))
+        calculators.add(CalculatorModel("Mortgage Loan", R.drawable.mortgage_loan))
+        calculators.add(CalculatorModel("Compound Interest", R.drawable.compound_interest))
+        calculators.add(CalculatorModel("Percentages", R.drawable.percentage))
+        calculators.add(CalculatorModel("Net Worth", R.drawable.net_worth))
+        calculators.add(CalculatorModel("Financial Independence", R.drawable.fi))
         val manager = LinearLayoutManager(this)
         bindingMain.rvCalculators.layoutManager = manager
         val calcAdapter = CalculatorAdapter(this, calculators)

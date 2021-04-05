@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MortgageLoanCalculator">
 
     <LinearLayout
@@ -28,16 +28,16 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_weight="0"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:textColor="@android:color/black"
+            android:layout_weight="0"
             android:fontFamily="@font/open_sans_light"
-            android:text="Net Worth Calculator"
-            android:textSize="26sp"
             android:gravity="center"
-            android:layout_gravity="center"/>
+            android:text="Net Worth Calculator"
+            android:textColor="@android:color/black"
+            android:textSize="26sp" />
 
     </LinearLayout>
 
@@ -47,19 +47,19 @@
         android:layout_weight="1">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Assets"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/open_sans_light"
-                android:textSize="20sp"
                 android:gravity="center_horizontal"
-                android:textColor="@android:color/black" />
+                android:text="Assets"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -75,9 +75,9 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
                     android:hint="Home equity"
+                    android:inputType="numberDecimal"
                     android:maxLength="12"
-                    android:maxLines="1"
-                    android:inputType="numberDecimal" />
+                    android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,9 +95,9 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
                     android:hint="Cash savings"
+                    android:inputType="numberDecimal"
                     android:maxLength="12"
-                    android:maxLines="1"
-                    android:inputType="numberDecimal" />
+                    android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,9 +115,9 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
                     android:hint="Investments"
+                    android:inputType="numberDecimal"
                     android:maxLength="12"
-                    android:maxLines="1"
-                    android:inputType="numberDecimal" />
+                    android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -135,9 +135,9 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
                     android:hint="Vehicle(s)"
+                    android:inputType="numberDecimal"
                     android:maxLength="12"
-                    android:maxLines="1"
-                    android:inputType="numberDecimal" />
+                    android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -155,21 +155,21 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
                     android:hint="Other assets"
+                    android:inputType="numberDecimal"
                     android:maxLength="12"
-                    android:maxLines="1"
-                    android:inputType="numberDecimal" />
+                    android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Liabilities"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/open_sans_light"
-                android:textSize="20sp"
                 android:gravity="center_horizontal"
-                android:textColor="@android:color/black" />
+                android:text="Liabilities"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -185,9 +185,9 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
                     android:hint="Credit card debt"
+                    android:inputType="numberDecimal"
                     android:maxLength="12"
-                    android:maxLines="1"
-                    android:inputType="numberDecimal" />
+                    android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -205,9 +205,9 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
                     android:hint="Overdrafts"
+                    android:inputType="numberDecimal"
                     android:maxLength="12"
-                    android:maxLines="1"
-                    android:inputType="numberDecimal" />
+                    android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -225,9 +225,9 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
                     android:hint="Student loans"
+                    android:inputType="numberDecimal"
                     android:maxLength="12"
-                    android:maxLines="1"
-                    android:inputType="numberDecimal" />
+                    android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -245,9 +245,9 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
                     android:hint="Vehicle loans"
+                    android:inputType="numberDecimal"
                     android:maxLength="12"
-                    android:maxLines="1"
-                    android:inputType="numberDecimal" />
+                    android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -265,9 +265,9 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
                     android:hint="Other liabilities"
+                    android:inputType="numberDecimal"
                     android:maxLength="12"
-                    android:maxLines="1"
-                    android:inputType="numberDecimal" />
+                    android:maxLines="1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -275,21 +275,21 @@
                 android:id="@+id/btnCalculate"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
-                android:text="Calculate"
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="20dp"
+                android:background="@drawable/calculate_btn_background"
                 android:fontFamily="@font/open_sans_light"
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
-                android:textColor="@color/colorAccent"
-                android:background="@drawable/calculate_btn_background"/>
+                android:text="Calculate"
+                android:textColor="@color/colorAccent" />
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_marginBottom="25dp"
-                android:layout_marginTop="5dp"
                 android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="25dp"
                 android:background="@drawable/divider" />
 
             <LinearLayout
@@ -301,54 +301,54 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:layout_gravity="center_horizontal"
                     android:text="Assets" />
 
                 <TextView
                     android:id="@+id/assets"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="24sp"
                     android:layout_gravity="center_horizontal"
                     android:fontFamily="@font/open_sans_light"
-                    tools:text = "£777,948" />
+                    android:textSize="24sp"
+                    tools:text="£777,948" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:layout_gravity="center_horizontal"
                     android:text="Liabilities" />
 
                 <TextView
                     android:id="@+id/liabilities"
                     android:layout_width="wrap_content"
-                    android:fontFamily="@font/open_sans_light"
                     android:layout_height="wrap_content"
-                    android:textSize="24sp"
                     android:layout_gravity="center_horizontal"
-                    tools:text = "£315,222" />
+                    android:fontFamily="@font/open_sans_light"
+                    android:textSize="24sp"
+                    tools:text="£315,222" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/open_sans_light"
-                    android:layout_marginTop="25dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/open_sans_light"
                     android:text="Net worth" />
 
                 <TextView
                     android:id="@+id/netWorth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="50dp"
                     android:fontFamily="@font/open_sans_light"
                     android:textSize="28sp"
-                    android:layout_marginBottom="50dp"
-                    android:layout_gravity="center_horizontal"
-                    tools:text = "£462,726" />
+                    tools:text="£462,726" />
 
             </LinearLayout>
 

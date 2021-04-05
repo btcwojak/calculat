@@ -2,14 +2,11 @@ package com.spudg.kalk
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
-import com.spudg.kalk.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.spudg.kalk.databinding.ActivityNetWorthCalculatorBinding
-import com.spudg.kalk.databinding.ActivityPercentageCalculatorBinding
 import java.text.DecimalFormat
 import java.text.NumberFormat
 
@@ -114,12 +111,9 @@ class NetWorthCalculator : AppCompatActivity() {
 
             bindingNetWorthCalc.calcResultsLayout.visibility = View.VISIBLE
 
-            }
-
         }
 
-
-
-
-
     }
+
+
+}
