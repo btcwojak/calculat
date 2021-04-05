@@ -20,7 +20,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/back_btn_padding"
-            android:contentDescription="Back"
+            android:contentDescription="@string/back"
             android:foreground="?attr/selectableItemBackground"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -32,10 +32,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:layout_weight="0"
             android:fontFamily="@font/open_sans_light"
             android:gravity="center"
-            android:text="Compound Interest\n Calculator"
+            android:text="@string/compound_interest_n_calculator"
             android:textColor="@android:color/black"
             android:textSize="26sp" />
 
@@ -65,7 +64,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Initial lump sum"
+                    android:hint="@string/initial_lump_sum"
                     android:inputType="numberDecimal"
                     android:maxLength="10"
                     android:maxLines="1" />
@@ -86,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Monthly deposit"
+                    android:hint="@string/monthly_deposit"
                     android:inputType="numberDecimal"
                     android:maxLength="10"
                     android:maxLines="1" />
@@ -107,7 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Average annual interest (%)"
+                    android:hint="@string/average_annual_interest"
                     android:inputType="numberDecimal"
                     android:maxLength="5"
                     android:maxLines="1" />
@@ -128,7 +127,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Term (years)"
+                    android:hint="@string/term_years"
                     android:inputType="number"
                     android:maxLength="5"
                     android:maxLines="1" />
@@ -146,7 +145,7 @@
                 android:fontFamily="@font/open_sans_light"
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
-                android:text="Calculate"
+                android:text="@string/calculate"
                 android:textColor="@color/colorAccent" />
 
             <ImageView
@@ -154,7 +153,8 @@
                 android:layout_height="2dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="25dp"
-                android:background="@drawable/divider" />
+                android:background="@drawable/divider"
+                android:contentDescription="@string/divider" />
 
             <LinearLayout
                 android:id="@+id/calcResultsLayout"
@@ -168,7 +168,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Initial contribution" />
+                    android:text="@string/initial_contribution" />
 
                 <TextView
                     android:id="@+id/initialDeposit"
@@ -185,7 +185,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Monthly contribution" />
+                    android:text="@string/monthly_contribution" />
 
                 <TextView
                     android:id="@+id/monthlyContribution"
@@ -202,7 +202,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Annual interest" />
+                    android:text="@string/annual_interest" />
 
                 <TextView
                     android:id="@+id/annualInterest"
@@ -219,7 +219,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Term" />
+                    android:text="@string/term" />
 
                 <TextView
                     android:id="@+id/termYears"
@@ -236,7 +236,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Total interest earned" />
+                    android:text="@string/total_interest_earned" />
 
                 <TextView
                     android:id="@+id/interestEarned"
@@ -253,7 +253,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Ending balance" />
+                    android:text="@string/ending_balance" />
 
                 <TextView
                     android:id="@+id/endingBalance"
@@ -270,7 +270,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/open_sans_light"
                     android:gravity="center_horizontal"
-                    android:text="Annual balance over term"
+                    android:text="@string/annual_balance_over_term"
                     android:textSize="20sp" />
 
                 <com.github.mikephil.charting.charts.LineChart

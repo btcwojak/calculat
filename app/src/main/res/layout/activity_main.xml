@@ -29,7 +29,7 @@
             android:gravity="center"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="Saved results"
+            android:text="@string/saved_results"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
@@ -46,7 +46,7 @@
             android:gravity="center"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="More"
+            android:text="@string/more"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
@@ -70,7 +70,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/open_sans_light"
-                android:text="All Calculators"
+                android:text="@string/all_calculators"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -85,7 +85,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/open_sans_light"
-                android:text="Most used at the top"
+                android:text="@string/most_used_at_the_top"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"

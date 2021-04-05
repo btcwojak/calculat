@@ -20,7 +20,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/back_btn_padding"
-            android:contentDescription="Back"
+            android:contentDescription="@string/back"
             android:foreground="?attr/selectableItemBackground"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -32,10 +32,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:layout_weight="0"
             android:fontFamily="@font/open_sans_light"
             android:gravity="center"
-            android:text="Net Worth Calculator"
+            android:text="@string/net_worth_calculator"
             android:textColor="@android:color/black"
             android:textSize="26sp" />
 
@@ -57,7 +56,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/open_sans_light"
                 android:gravity="center_horizontal"
-                android:text="Assets"
+                android:text="@string/assets"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -74,7 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Home equity"
+                    android:hint="@string/home_equity"
                     android:inputType="numberDecimal"
                     android:maxLength="12"
                     android:maxLines="1" />
@@ -94,7 +93,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Cash savings"
+                    android:hint="@string/cash_savings"
                     android:inputType="numberDecimal"
                     android:maxLength="12"
                     android:maxLines="1" />
@@ -114,7 +113,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Investments"
+                    android:hint="@string/investments"
                     android:inputType="numberDecimal"
                     android:maxLength="12"
                     android:maxLines="1" />
@@ -134,7 +133,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Vehicle(s)"
+                    android:hint="@string/vehicle_s"
                     android:inputType="numberDecimal"
                     android:maxLength="12"
                     android:maxLines="1" />
@@ -154,7 +153,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Other assets"
+                    android:hint="@string/other_assets"
                     android:inputType="numberDecimal"
                     android:maxLength="12"
                     android:maxLines="1" />
@@ -167,7 +166,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/open_sans_light"
                 android:gravity="center_horizontal"
-                android:text="Liabilities"
+                android:text="@string/liabilities"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -184,7 +183,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Credit card debt"
+                    android:hint="@string/credit_card_debt"
                     android:inputType="numberDecimal"
                     android:maxLength="12"
                     android:maxLines="1" />
@@ -204,7 +203,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Overdrafts"
+                    android:hint="@string/overdrafts"
                     android:inputType="numberDecimal"
                     android:maxLength="12"
                     android:maxLines="1" />
@@ -224,7 +223,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Student loans"
+                    android:hint="@string/student_loans"
                     android:inputType="numberDecimal"
                     android:maxLength="12"
                     android:maxLines="1" />
@@ -244,7 +243,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Vehicle loans"
+                    android:hint="@string/vehicle_loans"
                     android:inputType="numberDecimal"
                     android:maxLength="12"
                     android:maxLines="1" />
@@ -264,7 +263,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Other liabilities"
+                    android:hint="@string/other_liabilities"
                     android:inputType="numberDecimal"
                     android:maxLength="12"
                     android:maxLines="1" />
@@ -282,7 +281,7 @@
                 android:fontFamily="@font/open_sans_light"
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
-                android:text="Calculate"
+                android:text="@string/calculate"
                 android:textColor="@color/colorAccent" />
 
             <ImageView
@@ -290,7 +289,8 @@
                 android:layout_height="2dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="25dp"
-                android:background="@drawable/divider" />
+                android:background="@drawable/divider"
+                android:contentDescription="@string/divider" />
 
             <LinearLayout
                 android:id="@+id/calcResultsLayout"
@@ -304,7 +304,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Assets" />
+                    android:text="@string/assets" />
 
                 <TextView
                     android:id="@+id/assets"
@@ -321,7 +321,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Liabilities" />
+                    android:text="@string/liabilities" />
 
                 <TextView
                     android:id="@+id/liabilities"
@@ -338,7 +338,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Net worth" />
+                    android:text="@string/net_worth" />
 
                 <TextView
                     android:id="@+id/netWorth"

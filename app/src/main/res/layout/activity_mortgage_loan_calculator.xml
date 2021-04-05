@@ -20,7 +20,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/back_btn_padding"
-            android:contentDescription="Back"
+            android:contentDescription="@string/back"
             android:foreground="?attr/selectableItemBackground"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -32,10 +32,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:layout_weight="0"
             android:fontFamily="@font/open_sans_light"
             android:gravity="center"
-            android:text="Mortgage\n Loan Calculator"
+            android:text="@string/mortgage_n_loan_calculator"
             android:textColor="@android:color/black"
             android:textSize="26sp" />
 
@@ -65,7 +64,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Monthly repayment"
+                    android:hint="@string/monthly_repayment"
                     android:inputType="numberDecimal"
                     android:maxLength="10"
                     android:maxLines="1" />
@@ -86,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Term (years)"
+                    android:hint="@string/term_years"
                     android:inputType="number"
                     android:maxLength="5"
                     android:maxLines="1" />
@@ -107,7 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/open_sans_light"
-                    android:hint="Interest rate"
+                    android:hint="@string/interest_rate"
                     android:inputType="numberDecimal"
                     android:maxLength="5"
                     android:maxLines="1" />
@@ -125,7 +124,7 @@
                 android:fontFamily="@font/open_sans_light"
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
-                android:text="Calculate"
+                android:text="@string/calculate"
                 android:textColor="@color/colorAccent" />
 
             <ImageView
@@ -133,7 +132,8 @@
                 android:layout_height="2dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="25dp"
-                android:background="@drawable/divider" />
+                android:background="@drawable/divider"
+                android:contentDescription="@string/divider" />
 
             <LinearLayout
                 android:id="@+id/calcResultsLayout"
@@ -147,7 +147,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Monthly payment" />
+                    android:text="@string/monthly_payment" />
 
                 <TextView
                     android:id="@+id/maxRepayment"
@@ -164,7 +164,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Term (length)" />
+                    android:text="@string/term_length" />
 
                 <TextView
                     android:id="@+id/term"
@@ -181,7 +181,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Interest rate" />
+                    android:text="@string/interest_rate" />
 
                 <TextView
                     android:id="@+id/interestRate"
@@ -198,7 +198,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Total interest to pay" />
+                    android:text="@string/total_interest_to_pay" />
 
                 <TextView
                     android:id="@+id/totalInterest"
@@ -215,7 +215,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="25dp"
                     android:fontFamily="@font/open_sans_light"
-                    android:text="Maximum borrow amount" />
+                    android:text="@string/maximum_borrow_amount" />
 
                 <TextView
                     android:id="@+id/maxToBorrow"
@@ -232,7 +232,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/open_sans_light"
                     android:gravity="center_horizontal"
-                    android:text="Mortgage balance over term"
+                    android:text="@string/mortgage_balance_over_term"
                     android:textSize="20sp" />
 
                 <com.github.mikephil.charting.charts.LineChart
