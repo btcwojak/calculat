@@ -54,7 +54,7 @@ class PercentageCalculator : AppCompatActivity() {
                 var Q2F1 = bindingPercentageCalc.etQ2F1.text.toString().toFloat()
                 var Q2F2 = bindingPercentageCalc.etQ2F2.text.toString().toFloat()
                 var answer = Q2F1/Q2F2
-                bindingPercentageCalc.Q2A1.text = figureFormatter.format(answer)
+                bindingPercentageCalc.Q2A1.text = percentFormatter.format(answer)
             }
         }
         bindingPercentageCalc.etQ2F2.addTextChangedListener {
@@ -62,7 +62,7 @@ class PercentageCalculator : AppCompatActivity() {
                 var Q2F1 = bindingPercentageCalc.etQ2F1.text.toString().toFloat()
                 var Q2F2 = bindingPercentageCalc.etQ2F2.text.toString().toFloat()
                 var answer = Q2F1/Q2F2
-                bindingPercentageCalc.Q2A1.text = figureFormatter.format(answer)
+                bindingPercentageCalc.Q2A1.text = percentFormatter.format(answer)
             }
         }
 
@@ -72,7 +72,7 @@ class PercentageCalculator : AppCompatActivity() {
                 var Q3F1 = bindingPercentageCalc.etQ3F1.text.toString().toFloat() //3
                 var Q3F2 = bindingPercentageCalc.etQ3F2.text.toString().toFloat() //6
                 var answer = (Q3F2-Q3F1)/Q3F1
-                bindingPercentageCalc.Q3A1.text = figureFormatter.format(answer)
+                bindingPercentageCalc.Q3A1.text = percentFormatter.format(answer)
             }
         }
         bindingPercentageCalc.etQ3F2.addTextChangedListener {
@@ -80,7 +80,7 @@ class PercentageCalculator : AppCompatActivity() {
                 var Q3F1 = bindingPercentageCalc.etQ3F1.text.toString().toFloat()
                 var Q3F2 = bindingPercentageCalc.etQ3F2.text.toString().toFloat()
                 var answer = (Q3F2-Q3F1)/Q3F1
-                bindingPercentageCalc.Q3A1.text = figureFormatter.format(answer)
+                bindingPercentageCalc.Q3A1.text = percentFormatter.format(answer)
             }
         }
 
