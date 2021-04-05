@@ -46,16 +46,30 @@ class MortgageLoanCalculator : AppCompatActivity() {
 
         bindingMortLoanCalc.btnCalculate.setOnClickListener {
 
-            if (bindingMortLoanCalc.etRepayment.text.toString().isNotEmpty() && bindingMortLoanCalc.etInterest.text.toString().isNotEmpty() && bindingMortLoanCalc.etTerm.text.toString().isNotEmpty()) {
+            val monthlyPayment: Float = if (bindingMortLoanCalc.etRepayment.text.toString().isEmpty()) {
+                0F
+            } else {
+                bindingMortLoanCalc.etRepayment.text.toString().toFloat()
+            }
+
+            val term: Float = if (bindingMortLoanCalc.etTerm.text.toString().isEmpty()) {
+                0F
+            } else {
+                bindingMortLoanCalc.etTerm.text.toString().toFloat()
+            }
+
+            val period = 12
+
+            val interestRate: Float = if (bindingMortLoanCalc.etInterest.text.toString().isEmpty()) {
+                0F
+            } else {
+                bindingMortLoanCalc.etInterest.text.toString().toFloat() / 100
+            }
+
                 this.currentFocus?.let { view ->
                     val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
                     imm?.hideSoftInputFromWindow(view.windowToken, 0)
                 }
-
-                val monthlyPayment = bindingMortLoanCalc.etRepayment.text.toString().toFloat()
-                val term = bindingMortLoanCalc.etTerm.text.toString().toFloat()
-                val period = 12
-                val interestRate = bindingMortLoanCalc.etInterest.text.toString().toFloat()/100
 
                 bindingMortLoanCalc.maxRepayment.text = gbpFormatter.format(monthlyPayment)
                 bindingMortLoanCalc.interestRate.text = percentFormatter.format(interestRate)
@@ -86,11 +100,6 @@ class MortgageLoanCalculator : AppCompatActivity() {
                 bindingMortLoanCalc.maxToBorrow.text = gbpFormatter.format(maxToBorrow)
 
                 setUpChart(yearlyLeftToPay)
-
-            } else {
-                Toast.makeText(this, "Make sure each field is filled in", Toast.LENGTH_SHORT).show()
-            }
-
 
 
         }

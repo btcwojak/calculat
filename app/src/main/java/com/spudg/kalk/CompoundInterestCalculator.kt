@@ -46,15 +46,34 @@ class CompoundInterestCalculator : AppCompatActivity() {
 
         bindingCICalc.btnCalculate.setOnClickListener {
 
-            if (bindingCICalc.etInitialLumpSum.text.toString().isNotEmpty() && bindingCICalc.etInterest.text.toString().isNotEmpty() && bindingCICalc.etTerm.text.toString().isNotEmpty() && bindingCICalc.etMonthlyDeposit.text.toString().isNotEmpty()) {
+            val initialDeposit: Float = if (bindingCICalc.etInitialLumpSum.text.toString().isEmpty()) {
+                0F
+            } else {
+                bindingCICalc.etInitialLumpSum.text.toString().toFloat()
+            }
+
+            val monthlyDeposit: Float = if (bindingCICalc.etMonthlyDeposit.text.toString().isEmpty()) {
+                0F
+            } else {
+                bindingCICalc.etMonthlyDeposit.text.toString().toFloat()
+            }
+
+            val termYears: Float = if (bindingCICalc.etTerm.text.toString().isEmpty()) {
+                0F
+            } else {
+                bindingCICalc.etTerm.text.toString().toFloat()
+            }
+
+            val rateOfReturn: Float = if (bindingCICalc.etInterest.text.toString().isEmpty()) {
+                0F
+            } else {
+                bindingCICalc.etInterest.text.toString().toFloat() / 100
+            }
+
                 this.currentFocus?.let { view ->
                     val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
                     imm?.hideSoftInputFromWindow(view.windowToken, 0)
                 }
-                val initialDeposit = bindingCICalc.etInitialLumpSum.text.toString().toFloat()
-                val monthlyDeposit = bindingCICalc.etMonthlyDeposit.text.toString().toFloat()
-                val termYears = bindingCICalc.etTerm.text.toString().toFloat()
-                val rateOfReturn = bindingCICalc.etInterest.text.toString().toFloat() / 100
 
                 val compoundedInitialDeposit = initialDeposit * ((1 + (rateOfReturn / 12)).pow(termYears * 12))
                 val compoundedMonthlyDeposits = monthlyDeposit * (((1 + (rateOfReturn / 12)).pow(12 * termYears) - 1) / (rateOfReturn / 12))
@@ -87,14 +106,9 @@ class CompoundInterestCalculator : AppCompatActivity() {
                 setUpChart(yearlyRunningBalance)
 
 
-            } else {
-                Toast.makeText(this, "Make sure each field is filled in", Toast.LENGTH_SHORT).show()
             }
 
         }
-
-
-    }
 
     private fun setUpChart(yearlyBalance: ArrayList<Float>) {
 
