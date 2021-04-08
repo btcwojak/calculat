@@ -23,7 +23,6 @@ import kotlin.math.pow
 
 class CompoundInterestCalculator : AppCompatActivity() {
 
-
     private lateinit var bindingCICalc: ActivityCompoundInterestCalculatorBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
