@@ -58,4 +58,15 @@
     <string name="all_rights_reserved">All rights reserved. By using this application, you agree that the creator of this application is not responsible for any losses or damages.</string>
     <string name="google_material_design_icons">google/material-design-icons</string>
     <string name="steve_matteson_open_sans_light_font">Steve Matteson / Open Sans Light font</string>
+    <string name="about_calculat">About Calculat</string>
+    <string name="calculat">Calculat</string>
+    <string name="v1_0_0_made_by_spudg_studios">v1.0.0, made by Spudg Studios</string>
+    <string name="calculat_about_text">Calculat is a free library of financial calculators designed to simplify the calculation of often complex loans, mortgages, compound returns and more. \n\nSpudg Studios is currently a one-man development studio and this is an early version of the application, so if you have any suggestions for new calculators that could be added or you\'ve found a bug, please send an email below!</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_use">Terms of Use</string>
+    <string name="rate_on_play_store">Rate on Play Store</string>
+    <string name="send_an_email">Send an email</string>
+    <string name="welcome">Welcome!</string>
+    <string name="calculators_listed_below">Calculators listed below</string>
+    <string name="about">About</string>
 </resources>
