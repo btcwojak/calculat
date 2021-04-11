@@ -34,7 +34,7 @@
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/open_sans_light"
             android:gravity="center"
-            android:text="@string/compound_interest_n_calculator"
+            android:text="@string/financial_independence_calculator"
             android:textColor="@android:color/black"
             android:textSize="26sp" />
 

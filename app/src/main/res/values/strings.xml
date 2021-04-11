@@ -69,4 +69,5 @@
     <string name="welcome">Welcome!</string>
     <string name="calculators_listed_below">Calculators listed below</string>
     <string name="about">About</string>
+    <string name="financial_independence_calculator">Financial Independence Calculator</string>
 </resources>
