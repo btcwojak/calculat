@@ -10,88 +10,67 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/main_toolbar_background"
-        android:elevation="25dp"
         android:gravity="center"
+        android:elevation="25dp"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/accounts_btn"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/open_sans_light"
-            android:foreground="?attr/selectableItemBackground"
-            android:gravity="center"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:text="@string/saved_results"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp" />
+            android:orientation="vertical"
+            android:layout_weight="4">
 
         <TextView
-            android:id="@+id/more_btn"
+            android:id="@+id/account_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/open_sans_light"
+            android:text="@string/all_calculators"
+            android:layout_marginTop="30dp"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/balance_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/open_sans_light"
+            android:text="@string/most_used_at_the_top"
+            android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="top"
+            android:background="@drawable/about_btn_background"
+            android:elevation="25dp"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/about_btn"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
-            android:layout_weight="1"
             android:fontFamily="@font/open_sans_light"
             android:foreground="?attr/selectableItemBackground"
             android:gravity="center"
             android:paddingTop="10dp"
+            android:layout_marginStart="5dp"
             android:paddingBottom="10dp"
-            android:text="@string/more"
+            android:text="About"
             android:textColor="@color/colorAccent"
             android:textSize="16sp" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/llHeader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#FFFFFF">
-
-            <TextView
-                android:id="@+id/account_heading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="40dp"
-                android:fontFamily="@font/open_sans_light"
-                android:text="@string/all_calculators"
-                android:textColor="#000000"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/balance_heading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="@font/open_sans_light"
-                android:text="@string/most_used_at_the_top"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/account_heading" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
     </LinearLayout>
 

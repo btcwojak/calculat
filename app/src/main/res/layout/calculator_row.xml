@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/calculatorRowLayout"
     android:layout_width="match_parent"
-    android:layout_height="75dp"
+    android:layout_height="85dp"
     android:layout_margin="20dp"
     android:background="@drawable/calculator_tile_background"
     android:elevation="25dp"
