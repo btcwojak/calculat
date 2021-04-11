@@ -1,11 +1,11 @@
-package com.spudg.kalk
+package com.spudg.calculat
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.spudg.kalk.databinding.CalculatorRowBinding
+import com.spudg.calculat.databinding.CalculatorRowBinding
 import java.util.*
 
 class CalculatorAdapter(private val context: Context, private val items: ArrayList<CalculatorModel>) :

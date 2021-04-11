@@ -1,4 +1,4 @@
-package com.spudg.kalk
+package com.spudg.calculat
 
 import android.content.Context
 import android.content.Intent
@@ -15,7 +15,7 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.ValueFormatter
-import com.spudg.kalk.databinding.ActivityFICalculatorBinding
+import com.spudg.calculat.databinding.ActivityFICalculatorBinding
 import java.text.DecimalFormat
 import java.text.NumberFormat
 

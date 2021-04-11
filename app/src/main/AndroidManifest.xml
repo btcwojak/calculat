@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.spudg.kalk">
+    package="com.spudg.calculat">
 
     <application
         android:allowBackup="true"
@@ -8,29 +8,39 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Kalk">
-        <activity android:name=".FICalculator"></activity>
-        <activity android:name=".NetWorthCalculator" />
+        android:theme="@style/Calculat">
         <activity
-            android:name=".PercentageCalculator"
+            android:name="com.spudg.calculat.AboutActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Kalk" />
+            android:theme="@style/Calculat" />
         <activity
-            android:name=".CompoundInterestCalculator"
+            android:name="com.spudg.calculat.FICalculator"
             android:screenOrientation="portrait"
-            android:theme="@style/Kalk" />
+            android:theme="@style/Calculat" />
         <activity
-            android:name=".MortgageLoanCalculator"
+            android:name="com.spudg.calculat.NetWorthCalculator"
             android:screenOrientation="portrait"
-            android:theme="@style/Kalk" />
+            android:theme="@style/Calculat" />
         <activity
-            android:name=".MortgageRepaymentCalculator"
+            android:name="com.spudg.calculat.PercentageCalculator"
             android:screenOrientation="portrait"
-            android:theme="@style/Kalk" />
+            android:theme="@style/Calculat" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.spudg.calculat.CompoundInterestCalculator"
             android:screenOrientation="portrait"
-            android:theme="@style/Kalk">
+            android:theme="@style/Calculat" />
+        <activity
+            android:name="com.spudg.calculat.MortgageLoanCalculator"
+            android:screenOrientation="portrait"
+            android:theme="@style/Calculat" />
+        <activity
+            android:name="com.spudg.calculat.MortgageRepaymentCalculator"
+            android:screenOrientation="portrait"
+            android:theme="@style/Calculat" />
+        <activity
+            android:name="com.spudg.calculat.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Calculat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

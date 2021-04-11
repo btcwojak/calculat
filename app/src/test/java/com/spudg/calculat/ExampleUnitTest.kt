@@ -1,4 +1,4 @@
-package com.spudg.kalk
+package com.spudg.calculat
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

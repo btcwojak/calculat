@@ -1,4 +1,4 @@
-package com.spudg.kalk
+package com.spudg.calculat
 
 import android.content.Context
 import android.content.Intent
@@ -15,53 +15,52 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.ValueFormatter
-import com.spudg.kalk.databinding.ActivityMortgageLoanCalculatorBinding
+import com.spudg.calculat.databinding.ActivityMortgageRepaymentCalculatorBinding
 import java.text.DecimalFormat
 import java.text.NumberFormat
 import kotlin.math.pow
 
-class MortgageLoanCalculator : AppCompatActivity() {
+class MortgageRepaymentCalculator : AppCompatActivity() {
 
-    private lateinit var bindingMortLoanCalc: ActivityMortgageLoanCalculatorBinding
+    private lateinit var bindingMortRepayCalc: ActivityMortgageRepaymentCalculatorBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingMortLoanCalc = ActivityMortgageLoanCalculatorBinding.inflate(layoutInflater)
-        val view = bindingMortLoanCalc.root
+        bindingMortRepayCalc = ActivityMortgageRepaymentCalculatorBinding.inflate(layoutInflater)
+        val view = bindingMortRepayCalc.root
         setContentView(view)
 
         val gbpFormatter: NumberFormat = DecimalFormat("£#,##0.00")
         val percentFormatter: NumberFormat = DecimalFormat("#,##0.00%")
 
-
-        bindingMortLoanCalc.backToCalcListFromMortLoanCalc.setOnClickListener {
+        bindingMortRepayCalc.backToCalcListFromMortRepayCalc.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
 
-        bindingMortLoanCalc.calcResultsLayout.visibility = View.GONE
+        bindingMortRepayCalc.calcResultsLayout.visibility = View.GONE
 
-        bindingMortLoanCalc.btnCalculate.setOnClickListener {
+        bindingMortRepayCalc.btnCalculate.setOnClickListener {
 
-            val monthlyPayment: Float = if (bindingMortLoanCalc.etRepayment.text.toString().isEmpty()) {
+            val borrowing: Float = if (bindingMortRepayCalc.etBorrowing.text.toString().isEmpty()) {
                 0F
             } else {
-                bindingMortLoanCalc.etRepayment.text.toString().toFloat()
+                bindingMortRepayCalc.etBorrowing.text.toString().toFloat()
             }
 
-            val term: Float = if (bindingMortLoanCalc.etTerm.text.toString().isEmpty()) {
+            val term: Float = if (bindingMortRepayCalc.etTerm.text.toString().isEmpty()) {
                 0F
             } else {
-                bindingMortLoanCalc.etTerm.text.toString().toFloat()
+                bindingMortRepayCalc.etTerm.text.toString().toFloat()
             }
 
             val period = 12
 
-            val interestRate: Float = if (bindingMortLoanCalc.etInterest.text.toString().isEmpty()) {
+            val interestRate: Float = if (bindingMortRepayCalc.etInterest.text.toString().isEmpty()) {
                 0F
             } else {
-                bindingMortLoanCalc.etInterest.text.toString().toFloat() / 100
+                bindingMortRepayCalc.etInterest.text.toString().toFloat() / 100
             }
 
             this.currentFocus?.let { view ->
@@ -69,15 +68,15 @@ class MortgageLoanCalculator : AppCompatActivity() {
                 imm?.hideSoftInputFromWindow(view.windowToken, 0)
             }
 
-            bindingMortLoanCalc.maxRepayment.text = gbpFormatter.format(monthlyPayment)
-            bindingMortLoanCalc.interestRate.text = percentFormatter.format(interestRate)
-            bindingMortLoanCalc.term.text = "${term.toInt()} years"
+            bindingMortRepayCalc.totalBorrowing.text = gbpFormatter.format(borrowing)
+            bindingMortRepayCalc.interestRate.text = percentFormatter.format(interestRate)
+            bindingMortRepayCalc.term.text = "${term.toInt()} years"
 
-            val maxToBorrow = 1 / (((1 + interestRate / period).pow(term * period) * (interestRate / period) / ((1 + interestRate / period).pow(term * period) - 1)) * (1 / monthlyPayment))
+            val monthlyPayment = (borrowing * (1 + interestRate / period).pow(term * period) * (interestRate / period) / ((1 + interestRate / period).pow(term * period) - 1))
 
             val monthlyLeftToPay: ArrayList<Float> = arrayListOf()
-            monthlyLeftToPay.add(maxToBorrow)
-            var runningToRepay = maxToBorrow
+            monthlyLeftToPay.add(borrowing)
+            var runningToRepay = borrowing
             repeat((term * period).toInt()) {
                 runningToRepay = runningToRepay + (runningToRepay * interestRate) / 12 - monthlyPayment
                 monthlyLeftToPay.add(runningToRepay)
@@ -94,14 +93,13 @@ class MortgageLoanCalculator : AppCompatActivity() {
                         yearlyLeftToPay.add(monthlyLeftToPay[i])
                     }
 
-            bindingMortLoanCalc.totalInterest.text = gbpFormatter.format((monthlyPayment * term * period) - maxToBorrow)
-            bindingMortLoanCalc.maxToBorrow.text = gbpFormatter.format(maxToBorrow)
+            bindingMortRepayCalc.totalInterest.text = gbpFormatter.format((monthlyPayment * term * period) - borrowing)
+            bindingMortRepayCalc.monthlyRepayment.text = gbpFormatter.format(monthlyPayment)
 
             setUpChart(yearlyLeftToPay)
 
 
         }
-
 
     }
 
@@ -122,7 +120,7 @@ class MortgageLoanCalculator : AppCompatActivity() {
         val dataLine = LineData(dataSetLine)
         dataSetLine.color = R.color.colorAccent
 
-        val chartLine: LineChart = bindingMortLoanCalc.leftToPayLineChart
+        val chartLine: LineChart = bindingMortRepayCalc.leftToPayLineChart
         if (entriesLine.size > 0) {
             chartLine.data = dataLine
         }
@@ -159,7 +157,7 @@ class MortgageLoanCalculator : AppCompatActivity() {
 
         chartLine.invalidate()
 
-        bindingMortLoanCalc.calcResultsLayout.visibility = View.VISIBLE
+        bindingMortRepayCalc.calcResultsLayout.visibility = View.VISIBLE
 
     }
 

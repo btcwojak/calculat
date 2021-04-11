@@ -1,4 +1,4 @@
-package com.spudg.kalk
+package com.spudg.calculat
 
 class CalculatorModel(
         val name: String,

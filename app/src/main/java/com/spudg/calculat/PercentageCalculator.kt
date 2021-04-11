@@ -1,10 +1,10 @@
-package com.spudg.kalk
+package com.spudg.calculat
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import com.spudg.kalk.databinding.ActivityPercentageCalculatorBinding
+import com.spudg.calculat.databinding.ActivityPercentageCalculatorBinding
 import java.text.DecimalFormat
 import java.text.NumberFormat
 

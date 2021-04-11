@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kalk</string>
+    <string name="app_name">Calculat</string>
     <string name="back">Back</string>
     <string name="mortgage_n_repayment_calculator">Mortgage\n Repayment Calculator</string>
     <string name="how_much_to_borrow">How much to borrow</string>
@@ -45,10 +45,17 @@
     <string name="other_liabilities">Other liabilities</string>
     <string name="net_worth">Net worth</string>
     <string name="percentages_calculator">Percentages Calculator</string>
+    <string name="licensed_apache_2_0">Licensed under the Apache License 2.0</string>
     <string name="of">% of</string>
     <string name="is">is</string>
     <string name="_0">0</string>
     <string name="as_a_of">as a % of</string>
     <string name="_0_percent">0%</string>
     <string name="to">to</string>
+    <string name="calculat_logo">Calculat Logo</string>
+    <string name="version_by_ss">v%1$s, made by Spudg Studios</string>
+    <string name="copyright">Copyright © 2020 Spudg Studios</string>
+    <string name="all_rights_reserved">All rights reserved. By using this application, you agree that the creator of this application is not responsible for any losses or damages.</string>
+    <string name="google_material_design_icons">google/material-design-icons</string>
+    <string name="steve_matteson_open_sans_light_font">Steve Matteson / Open Sans Light font</string>
 </resources>

@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="Kalk" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Calculat" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="popupMenuStyle">@style/PopupMenu</item>
         <item name="android:textAppearanceLargePopupMenu">@style/myPopupMenuTextAppearanceLarge
         </item>

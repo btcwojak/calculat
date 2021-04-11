@@ -1,10 +1,10 @@
-package com.spudg.kalk
+package com.spudg.calculat
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.spudg.kalk.databinding.ActivityMainBinding
+import com.spudg.calculat.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +17,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         setUpCalculatorList()
+
+        bindingMain.aboutBtn.setOnClickListener {
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

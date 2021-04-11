@@ -1,4 +1,4 @@
-package com.spudg.kalk
+package com.spudg.calculat
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
-import com.spudg.kalk.databinding.ActivityNetWorthCalculatorBinding
+import com.spudg.calculat.databinding.ActivityNetWorthCalculatorBinding
 import java.text.DecimalFormat
 import java.text.NumberFormat
 

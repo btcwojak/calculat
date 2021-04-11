@@ -1,4 +1,4 @@
-package com.spudg.kalk
+package com.spudg.calculat
 
 import android.content.Context
 import android.content.Intent
@@ -15,52 +15,53 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.ValueFormatter
-import com.spudg.kalk.databinding.ActivityMortgageRepaymentCalculatorBinding
+import com.spudg.calculat.databinding.ActivityMortgageLoanCalculatorBinding
 import java.text.DecimalFormat
 import java.text.NumberFormat
 import kotlin.math.pow
 
-class MortgageRepaymentCalculator : AppCompatActivity() {
+class MortgageLoanCalculator : AppCompatActivity() {
 
-    private lateinit var bindingMortRepayCalc: ActivityMortgageRepaymentCalculatorBinding
+    private lateinit var bindingMortLoanCalc: ActivityMortgageLoanCalculatorBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingMortRepayCalc = ActivityMortgageRepaymentCalculatorBinding.inflate(layoutInflater)
-        val view = bindingMortRepayCalc.root
+        bindingMortLoanCalc = ActivityMortgageLoanCalculatorBinding.inflate(layoutInflater)
+        val view = bindingMortLoanCalc.root
         setContentView(view)
 
         val gbpFormatter: NumberFormat = DecimalFormat("£#,##0.00")
         val percentFormatter: NumberFormat = DecimalFormat("#,##0.00%")
 
-        bindingMortRepayCalc.backToCalcListFromMortRepayCalc.setOnClickListener {
+
+        bindingMortLoanCalc.backToCalcListFromMortLoanCalc.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
 
-        bindingMortRepayCalc.calcResultsLayout.visibility = View.GONE
+        bindingMortLoanCalc.calcResultsLayout.visibility = View.GONE
 
-        bindingMortRepayCalc.btnCalculate.setOnClickListener {
+        bindingMortLoanCalc.btnCalculate.setOnClickListener {
 
-            val borrowing: Float = if (bindingMortRepayCalc.etBorrowing.text.toString().isEmpty()) {
+            val monthlyPayment: Float = if (bindingMortLoanCalc.etRepayment.text.toString().isEmpty()) {
                 0F
             } else {
-                bindingMortRepayCalc.etBorrowing.text.toString().toFloat()
+                bindingMortLoanCalc.etRepayment.text.toString().toFloat()
             }
 
-            val term: Float = if (bindingMortRepayCalc.etTerm.text.toString().isEmpty()) {
+            val term: Float = if (bindingMortLoanCalc.etTerm.text.toString().isEmpty()) {
                 0F
             } else {
-                bindingMortRepayCalc.etTerm.text.toString().toFloat()
+                bindingMortLoanCalc.etTerm.text.toString().toFloat()
             }
 
             val period = 12
 
-            val interestRate: Float = if (bindingMortRepayCalc.etInterest.text.toString().isEmpty()) {
+            val interestRate: Float = if (bindingMortLoanCalc.etInterest.text.toString().isEmpty()) {
                 0F
             } else {
-                bindingMortRepayCalc.etInterest.text.toString().toFloat() / 100
+                bindingMortLoanCalc.etInterest.text.toString().toFloat() / 100
             }
 
             this.currentFocus?.let { view ->
@@ -68,15 +69,15 @@ class MortgageRepaymentCalculator : AppCompatActivity() {
                 imm?.hideSoftInputFromWindow(view.windowToken, 0)
             }
 
-            bindingMortRepayCalc.totalBorrowing.text = gbpFormatter.format(borrowing)
-            bindingMortRepayCalc.interestRate.text = percentFormatter.format(interestRate)
-            bindingMortRepayCalc.term.text = "${term.toInt()} years"
+            bindingMortLoanCalc.maxRepayment.text = gbpFormatter.format(monthlyPayment)
+            bindingMortLoanCalc.interestRate.text = percentFormatter.format(interestRate)
+            bindingMortLoanCalc.term.text = "${term.toInt()} years"
 
-            val monthlyPayment = (borrowing * (1 + interestRate / period).pow(term * period) * (interestRate / period) / ((1 + interestRate / period).pow(term * period) - 1))
+            val maxToBorrow = 1 / (((1 + interestRate / period).pow(term * period) * (interestRate / period) / ((1 + interestRate / period).pow(term * period) - 1)) * (1 / monthlyPayment))
 
             val monthlyLeftToPay: ArrayList<Float> = arrayListOf()
-            monthlyLeftToPay.add(borrowing)
-            var runningToRepay = borrowing
+            monthlyLeftToPay.add(maxToBorrow)
+            var runningToRepay = maxToBorrow
             repeat((term * period).toInt()) {
                 runningToRepay = runningToRepay + (runningToRepay * interestRate) / 12 - monthlyPayment
                 monthlyLeftToPay.add(runningToRepay)
@@ -93,13 +94,14 @@ class MortgageRepaymentCalculator : AppCompatActivity() {
                         yearlyLeftToPay.add(monthlyLeftToPay[i])
                     }
 
-            bindingMortRepayCalc.totalInterest.text = gbpFormatter.format((monthlyPayment * term * period) - borrowing)
-            bindingMortRepayCalc.monthlyRepayment.text = gbpFormatter.format(monthlyPayment)
+            bindingMortLoanCalc.totalInterest.text = gbpFormatter.format((monthlyPayment * term * period) - maxToBorrow)
+            bindingMortLoanCalc.maxToBorrow.text = gbpFormatter.format(maxToBorrow)
 
             setUpChart(yearlyLeftToPay)
 
 
         }
+
 
     }
 
@@ -120,7 +122,7 @@ class MortgageRepaymentCalculator : AppCompatActivity() {
         val dataLine = LineData(dataSetLine)
         dataSetLine.color = R.color.colorAccent
 
-        val chartLine: LineChart = bindingMortRepayCalc.leftToPayLineChart
+        val chartLine: LineChart = bindingMortLoanCalc.leftToPayLineChart
         if (entriesLine.size > 0) {
             chartLine.data = dataLine
         }
@@ -157,7 +159,7 @@ class MortgageRepaymentCalculator : AppCompatActivity() {
 
         chartLine.invalidate()
 
-        bindingMortRepayCalc.calcResultsLayout.visibility = View.VISIBLE
+        bindingMortLoanCalc.calcResultsLayout.visibility = View.VISIBLE
 
     }
 
