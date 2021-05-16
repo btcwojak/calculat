@@ -78,9 +78,11 @@ class FICalculator : AppCompatActivity() {
             val endingMonthlyInvestments = arrayListOf<Float>()
             endingMonthlyInvestments.add(currentNumber)
 
-            while (currentNumber < fiNumber) {
-                currentNumber += monthlyDeposit + ((currentNumber + monthlyDeposit) * (rateOfReturn/12))
-                endingMonthlyInvestments.add(currentNumber)
+            if (currentNumber > 0) {
+                while (currentNumber < fiNumber) {
+                    currentNumber += monthlyDeposit + ((currentNumber + monthlyDeposit) * (rateOfReturn/12))
+                    endingMonthlyInvestments.add(currentNumber)
+                }
             }
 
             val timeToFIMonths = (endingMonthlyInvestments.size-1)

@@ -96,8 +96,6 @@ class CompoundInterestCalculator : AppCompatActivity() {
             val yearlyRunningBalance: ArrayList<Float> = arrayListOf()
             (0 until monthlyRunningBalance.size + 1 step 12).asIterable()
                     .forEach { i ->
-                        Log.e("test", monthlyRunningBalance[i].toString())
-                        Log.e("test", i.toString())
                         yearlyRunningBalance.add(monthlyRunningBalance[i])
                     }
 
