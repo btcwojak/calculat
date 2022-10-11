@@ -44,11 +44,12 @@ class MortgageLoanCalculator : AppCompatActivity() {
 
         bindingMortLoanCalc.btnCalculate.setOnClickListener {
 
-            val monthlyPayment: Float = if (bindingMortLoanCalc.etRepayment.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingMortLoanCalc.etRepayment.text.toString().toFloat()
-            }
+            val monthlyPayment: Float =
+                if (bindingMortLoanCalc.etRepayment.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingMortLoanCalc.etRepayment.text.toString().toFloat()
+                }
 
             val term: Float = if (bindingMortLoanCalc.etTerm.text.toString().isEmpty()) {
                 0F
@@ -58,11 +59,12 @@ class MortgageLoanCalculator : AppCompatActivity() {
 
             val period = 12
 
-            val interestRate: Float = if (bindingMortLoanCalc.etInterest.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingMortLoanCalc.etInterest.text.toString().toFloat() / 100
-            }
+            val interestRate: Float =
+                if (bindingMortLoanCalc.etInterest.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingMortLoanCalc.etInterest.text.toString().toFloat() / 100
+                }
 
             this.currentFocus?.let { view ->
                 val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
@@ -73,13 +75,17 @@ class MortgageLoanCalculator : AppCompatActivity() {
             bindingMortLoanCalc.interestRate.text = percentFormatter.format(interestRate)
             bindingMortLoanCalc.term.text = "${term.toInt()} years"
 
-            val maxToBorrow = 1 / (((1 + interestRate / period).pow(term * period) * (interestRate / period) / ((1 + interestRate / period).pow(term * period) - 1)) * (1 / monthlyPayment))
+            val maxToBorrow =
+                1 / (((1 + interestRate / period).pow(term * period) * (interestRate / period) / ((1 + interestRate / period).pow(
+                    term * period
+                ) - 1)) * (1 / monthlyPayment))
 
             val monthlyLeftToPay: ArrayList<Float> = arrayListOf()
             monthlyLeftToPay.add(maxToBorrow)
             var runningToRepay = maxToBorrow
             repeat((term * period).toInt()) {
-                runningToRepay = runningToRepay + (runningToRepay * interestRate) / 12 - monthlyPayment
+                runningToRepay =
+                    runningToRepay + (runningToRepay * interestRate) / 12 - monthlyPayment
                 monthlyLeftToPay.add(runningToRepay)
             }
 
@@ -90,11 +96,12 @@ class MortgageLoanCalculator : AppCompatActivity() {
 
             val yearlyLeftToPay: ArrayList<Float> = arrayListOf()
             (0 until ((period * term) + 1).toInt() step 12).asIterable()
-                    .forEach { i ->
-                        yearlyLeftToPay.add(monthlyLeftToPay[i])
-                    }
+                .forEach { i ->
+                    yearlyLeftToPay.add(monthlyLeftToPay[i])
+                }
 
-            bindingMortLoanCalc.totalInterest.text = gbpFormatter.format((monthlyPayment * term * period) - maxToBorrow)
+            bindingMortLoanCalc.totalInterest.text =
+                gbpFormatter.format((monthlyPayment * term * period) - maxToBorrow)
             bindingMortLoanCalc.maxToBorrow.text = gbpFormatter.format(maxToBorrow)
 
             setUpChart(yearlyLeftToPay)

@@ -43,17 +43,19 @@ class FICalculator : AppCompatActivity() {
 
         bindingFICalc.btnCalculate.setOnClickListener {
 
-            val currentInvestments: Float = if (bindingFICalc.etCurrentInvestments.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingFICalc.etCurrentInvestments.text.toString().toFloat()
-            }
+            val currentInvestments: Float =
+                if (bindingFICalc.etCurrentInvestments.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingFICalc.etCurrentInvestments.text.toString().toFloat()
+                }
 
-            val monthlyDeposit: Float = if (bindingFICalc.etMonthlyDeposit.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingFICalc.etMonthlyDeposit.text.toString().toFloat()
-            }
+            val monthlyDeposit: Float =
+                if (bindingFICalc.etMonthlyDeposit.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingFICalc.etMonthlyDeposit.text.toString().toFloat()
+                }
 
             val rateOfReturn: Float = if (bindingFICalc.etInterest.text.toString().isEmpty()) {
                 0F
@@ -61,11 +63,12 @@ class FICalculator : AppCompatActivity() {
                 bindingFICalc.etInterest.text.toString().toFloat() / 100
             }
 
-            val targetMonthlyInc: Float = if (bindingFICalc.etTargetMonthlyIncome.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingFICalc.etTargetMonthlyIncome.text.toString().toFloat()
-            }
+            val targetMonthlyInc: Float =
+                if (bindingFICalc.etTargetMonthlyIncome.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingFICalc.etTargetMonthlyIncome.text.toString().toFloat()
+                }
 
 
             this.currentFocus?.let { view ->
@@ -73,20 +76,20 @@ class FICalculator : AppCompatActivity() {
                 imm?.hideSoftInputFromWindow(view.windowToken, 0)
             }
 
-            val fiNumber = (targetMonthlyInc*12)/.04
+            val fiNumber = (targetMonthlyInc * 12) / .04
             var currentNumber = currentInvestments
             val endingMonthlyInvestments = arrayListOf<Float>()
             endingMonthlyInvestments.add(currentNumber)
 
             if (currentNumber > 0) {
                 while (currentNumber < fiNumber) {
-                    currentNumber += monthlyDeposit + ((currentNumber + monthlyDeposit) * (rateOfReturn/12))
+                    currentNumber += monthlyDeposit + ((currentNumber + monthlyDeposit) * (rateOfReturn / 12))
                     endingMonthlyInvestments.add(currentNumber)
                 }
             }
 
-            val timeToFIMonths = (endingMonthlyInvestments.size-1)
-            val timeToFIYears = figureFormatter.format(timeToFIMonths/12.00)
+            val timeToFIMonths = (endingMonthlyInvestments.size - 1)
+            val timeToFIYears = figureFormatter.format(timeToFIMonths / 12.00)
 
             bindingFICalc.currentInvestments.text = gbpFormatter.format(currentInvestments)
             bindingFICalc.monthlyContribution.text = gbpFormatter.format(monthlyDeposit)
@@ -162,7 +165,6 @@ class FICalculator : AppCompatActivity() {
         bindingFICalc.calcResultsLayout.visibility = View.VISIBLE
 
     }
-
 
 
 }

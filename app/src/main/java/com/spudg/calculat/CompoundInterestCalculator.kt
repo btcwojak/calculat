@@ -3,7 +3,6 @@ package com.spudg.calculat
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
@@ -44,17 +43,19 @@ class CompoundInterestCalculator : AppCompatActivity() {
 
         bindingCICalc.btnCalculate.setOnClickListener {
 
-            val initialDeposit: Float = if (bindingCICalc.etInitialLumpSum.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingCICalc.etInitialLumpSum.text.toString().toFloat()
-            }
+            val initialDeposit: Float =
+                if (bindingCICalc.etInitialLumpSum.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingCICalc.etInitialLumpSum.text.toString().toFloat()
+                }
 
-            val monthlyDeposit: Float = if (bindingCICalc.etMonthlyDeposit.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingCICalc.etMonthlyDeposit.text.toString().toFloat()
-            }
+            val monthlyDeposit: Float =
+                if (bindingCICalc.etMonthlyDeposit.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingCICalc.etMonthlyDeposit.text.toString().toFloat()
+                }
 
             val termYears: Float = if (bindingCICalc.etTerm.text.toString().isEmpty()) {
                 0F
@@ -73,10 +74,13 @@ class CompoundInterestCalculator : AppCompatActivity() {
                 imm?.hideSoftInputFromWindow(view.windowToken, 0)
             }
 
-            val compoundedInitialDeposit = initialDeposit * ((1 + (rateOfReturn / 12)).pow(termYears * 12))
-            val compoundedMonthlyDeposits = monthlyDeposit * (((1 + (rateOfReturn / 12)).pow(12 * termYears) - 1) / (rateOfReturn / 12))
+            val compoundedInitialDeposit =
+                initialDeposit * ((1 + (rateOfReturn / 12)).pow(termYears * 12))
+            val compoundedMonthlyDeposits =
+                monthlyDeposit * (((1 + (rateOfReturn / 12)).pow(12 * termYears) - 1) / (rateOfReturn / 12))
             val totalEndingBalance = compoundedInitialDeposit + compoundedMonthlyDeposits
-            val interestEarned = totalEndingBalance - initialDeposit - (monthlyDeposit * termYears * 12)
+            val interestEarned =
+                totalEndingBalance - initialDeposit - (monthlyDeposit * termYears * 12)
 
             bindingCICalc.initialDeposit.text = gbpFormatter.format(initialDeposit)
             bindingCICalc.monthlyContribution.text = gbpFormatter.format(monthlyDeposit)
@@ -95,9 +99,9 @@ class CompoundInterestCalculator : AppCompatActivity() {
 
             val yearlyRunningBalance: ArrayList<Float> = arrayListOf()
             (0 until monthlyRunningBalance.size + 1 step 12).asIterable()
-                    .forEach { i ->
-                        yearlyRunningBalance.add(monthlyRunningBalance[i])
-                    }
+                .forEach { i ->
+                    yearlyRunningBalance.add(monthlyRunningBalance[i])
+                }
 
             setUpChart(yearlyRunningBalance)
 

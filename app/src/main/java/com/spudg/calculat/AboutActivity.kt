@@ -1,13 +1,11 @@
 package com.spudg.calculat
 
 import android.app.Dialog
-import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.spudg.calculat.databinding.ActivityAboutBinding
 import com.spudg.calculat.databinding.DialogTermsOfUseBinding
@@ -45,15 +43,11 @@ class AboutActivity : AppCompatActivity() {
             rate()
         }
 
-        bindingAbout.emailBtn.setOnClickListener {
-            email()
-        }
-
     }
 
     private fun privacyPolicy() {
         val url =
-                "https://docs.google.com/document/d/1PeOCyN7mB3VeqWVQJtaF1v_44hyH1lOuZ6lMFmkZh5E"
+            "https://docs.google.com/document/d/1A4TPL2AEzE3EAkpb3mr9iy5pY6ehhVr_gfAwbP8q_a8"
         val i = Intent(Intent.ACTION_VIEW)
         i.data = Uri.parse(url)
         startActivity(i)
@@ -75,28 +69,9 @@ class AboutActivity : AppCompatActivity() {
 
     }
 
-    private fun email() {
-
-        val intent = Intent(Intent.ACTION_SEND)
-        intent.type = "message/rfc822"
-        intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("spudgstudios@gmail.com"))
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Calculat - Suggestion / bug report")
-
-        try {
-            startActivity(Intent.createChooser(intent, "Send mail..."))
-        } catch (ex: ActivityNotFoundException) {
-            Toast.makeText(
-                    this,
-                    "There are no email clients installed.",
-                    Toast.LENGTH_SHORT
-            ).show()
-        }
-
-    }
-
     private fun rate() {
         val url =
-                "https://play.google.com/store/apps/details?id=com.spudg.calculat"
+            "https://play.google.com/store/apps/details?id=com.spudg.calculat"
         val i = Intent(Intent.ACTION_VIEW)
         i.data = Uri.parse(url)
         startActivity(i)

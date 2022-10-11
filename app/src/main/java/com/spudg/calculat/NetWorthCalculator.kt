@@ -39,23 +39,26 @@ class NetWorthCalculator : AppCompatActivity() {
 
             // ASSETS
 
-            val homeEquity: Float = if (bindingNetWorthCalc.etHomeEquity.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingNetWorthCalc.etHomeEquity.text.toString().toFloat()
-            }
+            val homeEquity: Float =
+                if (bindingNetWorthCalc.etHomeEquity.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingNetWorthCalc.etHomeEquity.text.toString().toFloat()
+                }
 
-            val cashSavings: Float = if (bindingNetWorthCalc.etCashSavings.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingNetWorthCalc.etCashSavings.text.toString().toFloat()
-            }
+            val cashSavings: Float =
+                if (bindingNetWorthCalc.etCashSavings.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingNetWorthCalc.etCashSavings.text.toString().toFloat()
+                }
 
-            val investments: Float = if (bindingNetWorthCalc.etInvestments.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingNetWorthCalc.etInvestments.text.toString().toFloat()
-            }
+            val investments: Float =
+                if (bindingNetWorthCalc.etInvestments.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingNetWorthCalc.etInvestments.text.toString().toFloat()
+                }
 
             val vehicles: Float = if (bindingNetWorthCalc.etVehicles.text.toString().isEmpty()) {
                 0F
@@ -63,46 +66,53 @@ class NetWorthCalculator : AppCompatActivity() {
                 bindingNetWorthCalc.etVehicles.text.toString().toFloat()
             }
 
-            val otherAssets: Float = if (bindingNetWorthCalc.etOtherAssets.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingNetWorthCalc.etOtherAssets.text.toString().toFloat()
-            }
+            val otherAssets: Float =
+                if (bindingNetWorthCalc.etOtherAssets.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingNetWorthCalc.etOtherAssets.text.toString().toFloat()
+                }
 
             //LIABILITIES
 
-            val creditCardDebt: Float = if (bindingNetWorthCalc.etCreditCardDebt.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingNetWorthCalc.etCreditCardDebt.text.toString().toFloat()
-            }
+            val creditCardDebt: Float =
+                if (bindingNetWorthCalc.etCreditCardDebt.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingNetWorthCalc.etCreditCardDebt.text.toString().toFloat()
+                }
 
-            val overdrafts: Float = if (bindingNetWorthCalc.etOverdrafts.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingNetWorthCalc.etOverdrafts.text.toString().toFloat()
-            }
+            val overdrafts: Float =
+                if (bindingNetWorthCalc.etOverdrafts.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingNetWorthCalc.etOverdrafts.text.toString().toFloat()
+                }
 
-            val studentLoans: Float = if (bindingNetWorthCalc.etStudentLoans.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingNetWorthCalc.etStudentLoans.text.toString().toFloat()
-            }
+            val studentLoans: Float =
+                if (bindingNetWorthCalc.etStudentLoans.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingNetWorthCalc.etStudentLoans.text.toString().toFloat()
+                }
 
-            val vehicleLoans: Float = if (bindingNetWorthCalc.etVehicleLoans.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingNetWorthCalc.etVehicleLoans.text.toString().toFloat()
-            }
+            val vehicleLoans: Float =
+                if (bindingNetWorthCalc.etVehicleLoans.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingNetWorthCalc.etVehicleLoans.text.toString().toFloat()
+                }
 
-            val otherLiabilities: Float = if (bindingNetWorthCalc.etOtherLiabilities.text.toString().isEmpty()) {
-                0F
-            } else {
-                bindingNetWorthCalc.etOtherLiabilities.text.toString().toFloat()
-            }
+            val otherLiabilities: Float =
+                if (bindingNetWorthCalc.etOtherLiabilities.text.toString().isEmpty()) {
+                    0F
+                } else {
+                    bindingNetWorthCalc.etOtherLiabilities.text.toString().toFloat()
+                }
 
             val assets = homeEquity + cashSavings + investments + vehicles + otherAssets
-            val liabilities = creditCardDebt + overdrafts + studentLoans + vehicleLoans + otherLiabilities
+            val liabilities =
+                creditCardDebt + overdrafts + studentLoans + vehicleLoans + otherLiabilities
             val netWorth = assets - liabilities
 
             bindingNetWorthCalc.assets.text = gbpFormatter.format(assets)

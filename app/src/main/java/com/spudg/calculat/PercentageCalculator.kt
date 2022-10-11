@@ -30,7 +30,10 @@ class PercentageCalculator : AppCompatActivity() {
 
         // _% of _ is _ (Q1)
         bindingPercentageCalc.etQ1F1.addTextChangedListener {
-            if (bindingPercentageCalc.etQ1F1.text.toString().isNotEmpty() && bindingPercentageCalc.etQ1F2.text.toString().isNotEmpty() && bindingPercentageCalc.etQ1F1.text.toString() != "." && bindingPercentageCalc.etQ1F2.text.toString() != ".") {
+            if (bindingPercentageCalc.etQ1F1.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ1F2.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ1F1.text.toString() != "." && bindingPercentageCalc.etQ1F2.text.toString() != "."
+            ) {
                 val Q1F1 = bindingPercentageCalc.etQ1F1.text.toString().toFloat()
                 val Q1F2 = bindingPercentageCalc.etQ1F2.text.toString().toFloat()
                 val answer = (Q1F1 / 100) * Q1F2
@@ -38,7 +41,10 @@ class PercentageCalculator : AppCompatActivity() {
             }
         }
         bindingPercentageCalc.etQ1F2.addTextChangedListener {
-            if (bindingPercentageCalc.etQ1F1.text.toString().isNotEmpty() && bindingPercentageCalc.etQ1F2.text.toString().isNotEmpty() && bindingPercentageCalc.etQ1F1.text.toString() != "." && bindingPercentageCalc.etQ1F2.text.toString() != ".") {
+            if (bindingPercentageCalc.etQ1F1.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ1F2.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ1F1.text.toString() != "." && bindingPercentageCalc.etQ1F2.text.toString() != "."
+            ) {
                 val Q1F1 = bindingPercentageCalc.etQ1F1.text.toString().toFloat()
                 val Q1F2 = bindingPercentageCalc.etQ1F2.text.toString().toFloat()
                 val answer = (Q1F1 / 100) * Q1F2
@@ -48,7 +54,10 @@ class PercentageCalculator : AppCompatActivity() {
 
         // _ as a % of _ is _% (Q2)
         bindingPercentageCalc.etQ2F1.addTextChangedListener {
-            if (bindingPercentageCalc.etQ2F1.text.toString().isNotEmpty() && bindingPercentageCalc.etQ2F2.text.toString().isNotEmpty() && bindingPercentageCalc.etQ2F1.text.toString() != "." && bindingPercentageCalc.etQ2F2.text.toString() != ".") {
+            if (bindingPercentageCalc.etQ2F1.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ2F2.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ2F1.text.toString() != "." && bindingPercentageCalc.etQ2F2.text.toString() != "."
+            ) {
                 val Q2F1 = bindingPercentageCalc.etQ2F1.text.toString().toFloat()
                 val Q2F2 = bindingPercentageCalc.etQ2F2.text.toString().toFloat()
                 val answer = Q2F1 / Q2F2
@@ -56,7 +65,10 @@ class PercentageCalculator : AppCompatActivity() {
             }
         }
         bindingPercentageCalc.etQ2F2.addTextChangedListener {
-            if (bindingPercentageCalc.etQ2F1.text.toString().isNotEmpty() && bindingPercentageCalc.etQ2F2.text.toString().isNotEmpty() && bindingPercentageCalc.etQ2F1.text.toString() != "." && bindingPercentageCalc.etQ2F2.text.toString() != ".") {
+            if (bindingPercentageCalc.etQ2F1.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ2F2.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ2F1.text.toString() != "." && bindingPercentageCalc.etQ2F2.text.toString() != "."
+            ) {
                 val Q2F1 = bindingPercentageCalc.etQ2F1.text.toString().toFloat()
                 val Q2F2 = bindingPercentageCalc.etQ2F2.text.toString().toFloat()
                 val answer = Q2F1 / Q2F2
@@ -66,7 +78,10 @@ class PercentageCalculator : AppCompatActivity() {
 
         // _ to _ is _% (Q3)
         bindingPercentageCalc.etQ3F1.addTextChangedListener {
-            if (bindingPercentageCalc.etQ3F1.text.toString().isNotEmpty() && bindingPercentageCalc.etQ3F2.text.toString().isNotEmpty() && bindingPercentageCalc.etQ3F1.text.toString() != "." && bindingPercentageCalc.etQ3F2.text.toString() != ".") {
+            if (bindingPercentageCalc.etQ3F1.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ3F2.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ3F1.text.toString() != "." && bindingPercentageCalc.etQ3F2.text.toString() != "."
+            ) {
                 val Q3F1 = bindingPercentageCalc.etQ3F1.text.toString().toFloat() //3
                 val Q3F2 = bindingPercentageCalc.etQ3F2.text.toString().toFloat() //6
                 val answer = (Q3F2 - Q3F1) / Q3F1
@@ -78,7 +93,10 @@ class PercentageCalculator : AppCompatActivity() {
             }
         }
         bindingPercentageCalc.etQ3F2.addTextChangedListener {
-            if (bindingPercentageCalc.etQ3F1.text.toString().isNotEmpty() && bindingPercentageCalc.etQ3F2.text.toString().isNotEmpty() && bindingPercentageCalc.etQ3F1.text.toString() != "." && bindingPercentageCalc.etQ3F2.text.toString() != ".") {
+            if (bindingPercentageCalc.etQ3F1.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ3F2.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ3F1.text.toString() != "." && bindingPercentageCalc.etQ3F2.text.toString() != "."
+            ) {
                 val Q3F1 = bindingPercentageCalc.etQ3F1.text.toString().toFloat()
                 val Q3F2 = bindingPercentageCalc.etQ3F2.text.toString().toFloat()
                 val answer = (Q3F2 - Q3F1) / Q3F1
@@ -92,7 +110,10 @@ class PercentageCalculator : AppCompatActivity() {
 
         // _ is _% of _ (Q4)
         bindingPercentageCalc.etQ4F1.addTextChangedListener {
-            if (bindingPercentageCalc.etQ4F1.text.toString().isNotEmpty() && bindingPercentageCalc.etQ4F2.text.toString().isNotEmpty() && bindingPercentageCalc.etQ4F1.text.toString() != "." && bindingPercentageCalc.etQ4F2.text.toString() != ".") {
+            if (bindingPercentageCalc.etQ4F1.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ4F2.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ4F1.text.toString() != "." && bindingPercentageCalc.etQ4F2.text.toString() != "."
+            ) {
                 val Q4F1 = bindingPercentageCalc.etQ4F1.text.toString().toFloat()
                 val Q4F2 = bindingPercentageCalc.etQ4F2.text.toString().toFloat()
                 val answer = Q4F1 / (Q4F2 / 100)
@@ -100,7 +121,10 @@ class PercentageCalculator : AppCompatActivity() {
             }
         }
         bindingPercentageCalc.etQ4F2.addTextChangedListener {
-            if (bindingPercentageCalc.etQ4F1.text.toString().isNotEmpty() && bindingPercentageCalc.etQ4F2.text.toString().isNotEmpty() && bindingPercentageCalc.etQ4F1.text.toString() != "." && bindingPercentageCalc.etQ4F2.text.toString() != ".") {
+            if (bindingPercentageCalc.etQ4F1.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ4F2.text.toString()
+                    .isNotEmpty() && bindingPercentageCalc.etQ4F1.text.toString() != "." && bindingPercentageCalc.etQ4F2.text.toString() != "."
+            ) {
                 val Q4F1 = bindingPercentageCalc.etQ4F1.text.toString().toFloat()
                 val Q4F2 = bindingPercentageCalc.etQ4F2.text.toString().toFloat()
                 val answer = Q4F1 / (Q4F2 / 100)
